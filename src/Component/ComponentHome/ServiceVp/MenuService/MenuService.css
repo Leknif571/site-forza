@@ -1,0 +1,13 @@
+.hvtt:hover{
+    border-right: 4px solid rgb(219, 8, 8);
+    background-color: #0f172a;
+    transition: all ease-in-out .4s;
+}
+
+.font-helv{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.activehvtt{
+    border-right: 4px solid rgb(219, 8, 8);
+}

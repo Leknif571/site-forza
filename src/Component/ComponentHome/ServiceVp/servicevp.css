@@ -1,0 +1,50 @@
+.border-menu{
+    border-right: 1px solid rgb(219, 8, 8);
+}
+
+.bg-service {
+
+    background-color: rgb(10, 10, 10);
+}
+
+.bg-img-0{
+    background-image: url('../../../assets/images/carImage3.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+    transition: ease-in-out 0.5s;
+}
+
+.bg-img-1{
+    background-image: url('../../../assets/images/carImage6.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+    transition: ease-in-out 0.5s;
+}
+
+
+.bg-img-2{
+    background-image: url('../../../assets/images/carImage4.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+    transition: ease-in-out 0.5s;
+}
+
+
+.bg-img-3{
+    background-image: url('../../../assets/images/carImage5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+    transition: ease-in-out 0.5s;
+}
+
+.bg-img-4{
+    background-image: url('../../../assets/images/carImage8.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+    transition: ease-in-out 0.5s;
+}
