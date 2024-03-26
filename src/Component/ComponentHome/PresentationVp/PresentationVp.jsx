@@ -10,9 +10,9 @@ const PresentationVp = () => {
         <div className="w-full h-max p-8 text-left lg:w-2/3">
             <h1 className="text-5xl font-titlef text-red-500 lg:text-7xl">Bienvenue chez Forza </h1>
             <h2 className="text-2xl font-titlef mb-8 lg:mb-8 lg:text-3xl pl-1">Dédié à la vente de véhicules de prestige !</h2>
-            <p className="text-gray-200 mb-7 text-lg lg:text-lg lg:mb-4">Nous sommes ravis de vous accueillir dans l'univers où le luxe et la performance se rencontrent. Notre plateforme est conçue pour les passionnés d'automobiles haut de gamme, ceux qui recherchent l'excellence et l'élégance dans chaque détail.
+            <p className="text-gray-200 mb-7 text-lg lg:text-lg lg:mb-4">Nous sommes ravis de vous accueillir dans l'univers où le luxe et la performance se rencontrent. Notre plateforme est conçue pour les passionnés d'automobile haut de gamme, ceux qui recherchent l'excellence et l'élégance dans chaque détail.
 
-            Découvrez une sélection de véhicules de prestige soigneusement choisies afin de vous satisfaire . Que vous recherchiez une supercar italienne emblématique, une berline allemande de renommée mondiale, ou un SUV de luxe pour dompter les routes avec style, notre catalogue saura répondre à vos attentes les plus élevées.
+            Découvrez une sélection de véhicules de prestige soigneusement choisie afin de vous satisfaire . Que vous recherchiez une supercar italienne emblématique, une berline allemande de renommée mondiale, ou un SUV de luxe pour dompter les routes avec style, notre catalogue saura répondre à vos attentes les plus élevées.
             </p>
 
             <p className="text-gray-200 mb-7 text-lg lg:text-lg lg:text-gray-200 lg:mb-8 lg:mb-16">

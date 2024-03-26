@@ -9,7 +9,7 @@ const CardVoiture = ({arrayElementCar}) => {
     <div>
       <Link id="RouterNavLink" to={'/detail/'+arrayElementCar.reference}>
         <div className='card-u border border-color-uni'>
-              <img src={arrayElementCar.img[0].url} alt="" />
+              <img src={arrayElementCar.img[0].original} alt="" />
             <div className='text lg:translate-y-1/4'>
                 <div className="lg:flex lg:justify-between lg:items-center">
                   <div className='titre-voiture lg:ml-4 lg:mt-2'>

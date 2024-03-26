@@ -11,7 +11,7 @@ const MenuService = ({whichClick, setWhichClicked}) => {
                 <span>Véhicule</span>
             </div>
             <div onClick={()=>setWhichClicked(1)} className={"w-full text-lg justify-center font-helv text-gray-200 h-16 cursor-pointer hvtt flex items-center p-2 "+ (whichClick == 1 ? 'activehvtt' : '')}>
-                <span>Recherche personnalisé</span>
+                <span>Recherche personnalisée</span>
             </div>
             <div onClick={()=>setWhichClicked(2)} className={"w-full text-lg justify-center font-helv text-gray-200 h-16 cursor-pointer hvtt flex items-center p-2 "+ (whichClick == 2 ? 'activehvtt' : '')}>
                 <span>Location</span>

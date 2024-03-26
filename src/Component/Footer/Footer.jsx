@@ -16,7 +16,7 @@ const Footer = () => {
               </div>
     },
     {
-      title: 'Mention légale',
+      title: 'Mentions légales',
       corps : <div>
                   <p>Raison social : Forza</p>
                   <p>Numéro de siret : XXX XXXX XXXX</p>
@@ -36,7 +36,7 @@ const Footer = () => {
                 <h3 className="text-xl font-bold mb-2 text-gray-300">Liens utiles</h3>
                 <ul className="list-unstyled">
                   <li><button className="hover:text-gray-300" onClick={() => {onOpen(); setWhichSection(0)}}>Contact</button></li>
-                  <li><button className="hover:text-gray-300" onClick={() => {onOpen(); setWhichSection(1)}}>Mention légale</button></li>
+                  <li><button className="hover:text-gray-300" onClick={() => {onOpen(); setWhichSection(1)}}>Mentions légales</button></li>
                   <li><button className="hover:text-gray-300" onClick={() => {onOpen(); setWhichSection(2)}}>Crédit</button></li>
                 </ul>
               </div>
