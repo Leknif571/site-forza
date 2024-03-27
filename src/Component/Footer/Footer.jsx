@@ -1,4 +1,8 @@
 import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSnapchat,faInstagram } from '@fortawesome/free-brands-svg-icons';
+
+
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 import './footer.css'
 
@@ -45,9 +49,9 @@ const Footer = () => {
 
                 <ul className="list-unstyled">
                   {/* <li><a href="https://www.facebook.com/" target="_blank" className="mr-4 hover:text-gray-400"><i className="fa fa-facebook">Facebook</i></a></li> */}
-                  <li><a href="https://www.instagram.com/forza.lu/" target="_blank" className="mr-4 hover:text-gray-400"><i className="fa fa-instagram">Instagram</i></a></li>
+                  <li><a href="https://www.instagram.com/forza.lu/" target="_blank" className="mr-4 hover:text-gray-400"><i><FontAwesomeIcon icon={faInstagram} /> Instagram</i></a></li>
                   {/* <li><a href="https://telegram.com/" target="_blank" className="mr-4 hover:text-gray-400"><i className="fa fa-twitter">Telegram</i></a></li> */}
-                  <li><a href="https://t.snapchat.com/RhzCXlFX" target="_blank" className="mr-4 hover:text-gray-400"><i className="fa fa-twitter">Snapchat</i></a></li>
+                  <li><a href="https://t.snapchat.com/RhzCXlFX" target="_blank" className="mr-4 hover:text-gray-400"><i><FontAwesomeIcon icon={faSnapchat} /> Snapchat</i></a></li>
                 </ul>
                 
               </div>
