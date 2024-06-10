@@ -127,12 +127,12 @@ const Voiture = () => {
   
         
 
-      
+      <hr className="m-1 border-red-500 md:ml-16 md:mr-16"/>
       <div className='bloc-info text-left text-xl font-titlef'>
-        <div className="bloc-info-txt">
-          <hr className="my-4 border-red-500 md:ml-16 md:mr-16"/>
-          {voitureD?.price && (<h2 className='text-4xl md:text-5xl pl-10 pb-2 md:pb-2 md:pl-20 font-titlef'>{voitureD.price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })} </h2> )}
-          <ul className='pl-10 text-xl list-disc md:pl-20'>
+        <div className="bloc-info-txt pt-5 md:pt-5">
+          
+          {voitureD?.price && (<h2 className='text-4xl md:text-5xl text-center md:text-left pb-3 md:pb-3 md:pl-16 font-titlef'>{voitureD.price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })} </h2> )}
+          <ul className='pl-10 pb-5 text-xl list-disc md:pl-20 md:pb-5'>
             <li>{voitureD.etat} <span className='text-red-600 text-2xl'> | </span> {voitureD.kilometers} km <span className='text-red-600 text-2xl'> | </span> {voitureD.chevaux} ch</li>
             <li>{voitureD.energie} <span className='text-red-600 text-2xl'> | </span> {voitureD.automatique === "on" ? 'Automatique' : "Manuel"} <span className='text-red-600 text-2xl'> | </span> {voitureD.date}</li>
             <li>{voitureD.capacityR} L <span className='text-red-600 text-2xl'> | </span> {voitureD.puissance} KW</li>
