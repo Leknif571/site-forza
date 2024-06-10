@@ -1,13 +1,21 @@
+// import dependances
 import React, { useEffect, useState } from 'react'
-
 import { useParams } from 'react-router-dom'
 import { collection, query, where, getDocs} from 'firebase/firestore'
 import { db } from '../../../Service/firebase.config'
 import { BreadcrumbItem, Breadcrumbs } from '@nextui-org/react'
-import ImageGallery from "react-image-gallery";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Chip} from "@nextui-org/react";
+      // import ImageGallery from "react-image-gallery";
+// import LightGallery dependances
+import fjGallery from 'flickr-justified-gallery';
+import LightGallery from 'lightgallery/react';
+import lgZoom from 'lightgallery/plugins/zoom';
+import lgVideo from 'lightgallery/plugins/video';
 
+// import style
 import "./voiture.css"
+import 'lightgallery/scss/lightgallery.scss';
+import 'lightgallery/scss/lg-zoom.scss';
 
 
 const Voiture = () => {
@@ -22,11 +30,13 @@ const Voiture = () => {
   
 
         useEffect(() => {
+
+
           let funcVoiture = async() => { 
               try { 
                   let VoitureData = await getDocs(q); 
                   VoitureData.forEach((doc) => {
-                      console.log(doc.data())
+                     
                       setVoiture(doc.data())
                       let dV = doc.data().img
                       setImg(dV)
@@ -54,9 +64,63 @@ const Voiture = () => {
                 <BreadcrumbItem>Detail</BreadcrumbItem>
             </Breadcrumbs>
         </div>
-        {voitureD?.title && (<h1 key={voitureD.title} className='text-4xl font-titlef text-left p-10 pt-8 md:pl-16 '>{voitureD.title}</h1>)}
-        <div className='mt-2 flex flex-row justify-center'>
-          <ImageGallery items={img} showBullets showIndex/>
+        {voitureD?.title && (
+          <div className='flex flex-col p-4 md:flex-row justify-between'>
+            <h1 key={voitureD.title} className='flex justify-center text-3xl font-titlef text-left md:pt-8 md:text-4xl md:pl-40'>{voitureD.title}</h1>
+            <div className='flex p-2 justify-center md:pt-8 md:pr-40'>
+                  <Chip variant='shadow' radius='sm' 
+                    color={
+                      voitureD.dispo === "Disponible" ? "success" :
+                      voitureD.dispo === "Disponible sur commande" ? "warning" :
+                      "danger"
+                    }
+                    size='lg'
+                    className='text-right'
+                  >{voitureD.dispo}</Chip>
+            </div>
+  
+          </div>
+          )}
+        <div className='h-5/6'>
+
+          <LightGallery
+              plugins={[lgZoom, lgVideo]}
+              mode="lg-fade"
+              pager={false}
+              thumbnail={true}
+              download={false}
+              galleryId={'nature'}
+              autoplayFirstVideo={false}
+              elementClassNames={'gallery'}
+              mobileSettings={{
+                controls: false,
+                showCloseIcon: false,
+                download: false,
+                rotate: false,
+              }}
+            >
+            
+              { 
+        img.map((u,v) =>
+                
+              <a
+                data-pinterest-text="Pin it2"
+                data-tweet-text="lightGallery slide  2"
+                className="gallery__item"
+                data-src={u.original}>
+                <img
+                  className={v === 0 ? "img-responsive inline-block w-1/3 m-1 first-img" : "img-responsive hidden w-1/3 m-1 all-img md:inline-block"}
+                  src={u.original}
+                />
+                
+              </a>
+      ) 
+
+      }
+      
+      </LightGallery>
+      <p className='block md:hidden'>1/{img.length}</p>
+
         </div>
       
       </div>
@@ -67,8 +131,8 @@ const Voiture = () => {
       <div className='bloc-info text-left text-xl font-titlef'>
         <div className="bloc-info-txt">
           <hr className="my-4 border-red-500 md:ml-16 md:mr-16"/>
-          {voitureD?.price && (<h2 className='text-2xl md:text-4xl pl-16 pb-4 md:pb-2 font-titlef'>{voitureD.price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })} </h2> )}
-          <ul className='p-10 text-xl list-disc md:pl-20'>
+          {voitureD?.price && (<h2 className='text-4xl md:text-5xl pl-10 pb-2 md:pb-2 md:pl-20 font-titlef'>{voitureD.price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })} </h2> )}
+          <ul className='pl-10 text-xl list-disc md:pl-20'>
             <li>{voitureD.etat} <span className='text-red-600 text-2xl'> | </span> {voitureD.kilometers} km <span className='text-red-600 text-2xl'> | </span> {voitureD.chevaux} ch</li>
             <li>{voitureD.energie} <span className='text-red-600 text-2xl'> | </span> {voitureD.automatique === "on" ? 'Automatique' : "Manuel"} <span className='text-red-600 text-2xl'> | </span> {voitureD.date}</li>
             <li>{voitureD.capacityR} L <span className='text-red-600 text-2xl'> | </span> {voitureD.puissance} KW</li>

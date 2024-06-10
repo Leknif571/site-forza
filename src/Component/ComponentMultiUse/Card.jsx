@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
 
 import './card.css'
 
@@ -7,7 +7,7 @@ const CardVoiture = ({arrayElementCar}) => {
 
   return (
     <div>
-      <Link id="RouterNavLink" to={'/detail/'+arrayElementCar.reference}>
+      <a id="RouterNavLink" href={'/detail/'+arrayElementCar.reference}>
         <div className='card-u border border-color-uni'>
               <img src={arrayElementCar.img[0].original} alt="" />
             <div className='text lg:translate-y-1/4'>
@@ -32,7 +32,7 @@ const CardVoiture = ({arrayElementCar}) => {
 
             </div>
         </div>
-        </Link>
+        </a>
       </div>
 
   )

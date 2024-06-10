@@ -1,3 +1,8 @@
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lightgallery.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lg-zoom.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lg-video.css');
+
+
 .bloc-info{
     background-image: url("../../../assets/images/overlay.jpg");
     background-repeat: no-repeat;
@@ -14,7 +19,24 @@
     background-color: rgb(10, 10, 10);
 }
 
-.image-gallery {
-  height: auto;
+.gallery {
+    max-width: auto;
+    display: inline-block;
+    margin: 0 auto;
+  }
+.first-img {
+    width: 80%;
+    height: auto;
+  }
 
+  @media only screen and (min-width: 768px) {
+    .first-img {
+        width: 18%;
+        height: auto;    }
 }
+
+.all-img{
+    width: 18%;
+    height: auto;
+}
+  

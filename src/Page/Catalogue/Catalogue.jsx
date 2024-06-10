@@ -59,6 +59,17 @@ const Catalogue = () => {
         }
     }
 
+    const filterDisponibilite = (valueSelectDispo) =>
+    {
+        setVoitures(copyVoitures)
+        if(valueSelectDispo.target.value !== 'tout'){
+            let newArrayVoitureDis = copyVoitures.filter((voiture) => voiture.dispo === valueSelectDispo.target.value)
+            setVoitures(newArrayVoitureDis)
+        }else{
+            setVoitures(copyVoitures)
+        }
+    }
+
      const filtreModel = valueSelectModel => {
         setVoitures(copyVoitures)
         if(valueSelectModel !== 'tout'){
@@ -135,11 +146,12 @@ const Catalogue = () => {
                 <div className="custom-select">
                     <select
                     className='font-titlef'
+                    onChange={filterDisponibilite}
                     >   
                         <option value={'tout'}>Disponibilité</option>
-                        <option value={'disponible'} >Disponible</option>
-                        <option value={'commande'} >Disponible sur commande</option>
-                        <option value={'vendu'} >Vendu</option>
+                        <option value={'Disponible'} >Disponible</option>
+                        <option value={'Disponible sur commande'} >Disponible sur commande</option>
+                        <option value={'Vendu'} >Vendu</option>
                         
                     </select>
                 </div>
