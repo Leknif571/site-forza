@@ -5,6 +5,7 @@ import { faSnapchat,faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 import './footer.css'
+import { faContactBook } from '@fortawesome/free-regular-svg-icons';
 
 
 const Footer = () => {
@@ -39,28 +40,29 @@ const Footer = () => {
               <div className="flex flex-col text-left">
                 <h3 className="text-xl font-bold mb-2 text-gray-300">Liens utiles</h3>
                 <ul className="list-unstyled">
-                  <li><button className="hover:text-gray-300" onClick={() => {onOpen(); setWhichSection(0)}}>Contact</button></li>
                   <li><button className="hover:text-gray-300" onClick={() => {onOpen(); setWhichSection(1)}}>Mentions légales</button></li>
                   <li><button className="hover:text-gray-300" onClick={() => {onOpen(); setWhichSection(2)}}>Crédit</button></li>
                 </ul>
               </div>
               <div className="flex flex-col" style={{borderLeft:"1px solid lightgray", borderRight:"1px solid lightgray"}}>
                 <h3 className="text-xl font-bold mb-2 text-gray-300">Suivez-nous</h3>
+                <div className='flex justify-center items-center'>
+                  <ul className="list-unstyled text-justify">
+                    {/* <li><a href="https://www.facebook.com/" target="_blank" className="mr-4 hover:text-gray-400"><i className="fa fa-facebook">Facebook</i></a></li> */}
+                    <li><a href="https://www.instagram.com/forza.lu/" target="_blank" className="mr-4 hover:text-gray-400"><i><FontAwesomeIcon icon={faInstagram} /> 	&nbsp; Instagram</i></a></li>
+                    {/* <li><a href="https://telegram.com/" target="_blank" className="mr-4 hover:text-gray-400"><i className="fa fa-twitter">Telegram</i></a></li> */}
+                    <li><a href="https://t.snapchat.com/RhzCXlFX" target="_blank" className="mr-4 hover:text-gray-400"><i><FontAwesomeIcon icon={faSnapchat} /> 	&nbsp; Snapchat</i></a></li>
+                    <li><button className="hover:text-gray-300" onClick={() => {onOpen(); setWhichSection(0)}}><i><FontAwesomeIcon icon={faContactBook} /> 	&nbsp; Contact</i></button></li>
+                  </ul>
+                </div>
 
-                <ul className="list-unstyled">
-                  {/* <li><a href="https://www.facebook.com/" target="_blank" className="mr-4 hover:text-gray-400"><i className="fa fa-facebook">Facebook</i></a></li> */}
-                  <li><a href="https://www.instagram.com/forza.lu/" target="_blank" className="mr-4 hover:text-gray-400"><i><FontAwesomeIcon icon={faInstagram} /> Instagram</i></a></li>
-                  {/* <li><a href="https://telegram.com/" target="_blank" className="mr-4 hover:text-gray-400"><i className="fa fa-twitter">Telegram</i></a></li> */}
-                  <li><a href="https://t.snapchat.com/RhzCXlFX" target="_blank" className="mr-4 hover:text-gray-400"><i><FontAwesomeIcon icon={faSnapchat} /> Snapchat</i></a></li>
-                </ul>
                 
               </div>
               <div className="flex flex-col">
                 <h3 className="text-xl font-bold mb-2 text-left text-gray-300">Adresse</h3>
                 <ul className="list-unstyled text-left">
-                  {/* <li><a href="#">1576 avenue Shibuya,</a></li>
-                  <li><a href="#">Japon, Tokyo</a></li>
-                  <li><a href="#">Shibuya, Shibuyaku 150-0002</a></li> */}
+                  <li><a href="#">30 rue de l'industrie,</a></li>
+                  <li><a href="#">Strassen, Luxembourg L-8069</a></li>
                 </ul>
               </div>
             </div>

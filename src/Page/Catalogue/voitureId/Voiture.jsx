@@ -133,9 +133,8 @@ const Voiture = () => {
           
           {voitureD?.price && (<h2 className='text-4xl md:text-5xl text-center md:text-left pb-3 md:pb-3 md:pl-16 font-titlef'>{voitureD.price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })} </h2> )}
           <ul className='pl-10 pb-5 text-xl list-disc md:pl-20 md:pb-5'>
-            <li>{voitureD.etat} <span className='text-red-600 text-2xl'> | </span> {voitureD.kilometers} km <span className='text-red-600 text-2xl'> | </span> {voitureD.chevaux} ch</li>
+            <li>{voitureD.etat} <span className='text-red-600 text-2xl'> | </span> {voitureD.kilometers} km <span className='text-red-600 text-2xl'> | </span> {voitureD.chevaux} ch <span className='text-red-600 text-2xl'> | </span> {voitureD.puissance} NW</li>
             <li>{voitureD.energie} <span className='text-red-600 text-2xl'> | </span> {voitureD.automatique === "on" ? 'Automatique' : "Manuel"} <span className='text-red-600 text-2xl'> | </span> {voitureD.date}</li>
-            <li>{voitureD.capacityR} L <span className='text-red-600 text-2xl'> | </span> {voitureD.puissance} KW</li>
             <li>{voitureD.marque} <span className='text-red-600 text-2xl'> | </span> {voitureD.model}</li>
             <li>{voitureD.nbPorte} portes <span className='text-red-600 text-2xl'> | </span> {voitureD.nbPlace} places</li>
             <li>Couleur intérieur : {voitureD.couleurInt}  <span className='text-red-600 text-2xl'> | </span> Matière : {voitureD.matSiege} </li>
@@ -145,17 +144,7 @@ const Voiture = () => {
         </div>
       </div>
 
-      <div className='bloc-text text-left'>
-        <div className='p-10 md:p-16'>
-          <h2 className='text-3xl font-helv'> Option </h2>
-          {voitureD?.description && (<p className='pt-6'>
-            {
-              voitureD.description
-            }
-          </p>)}
-        </div>
-
-      </div>
+      
 
       <Modal isOpen={isOpen} placement='center' size='4xl' onOpenChange={onOpenChange} className="bg-gray-900">
             <ModalContent>

@@ -10,6 +10,10 @@ export default function Navbari() {
   
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
+  const togleClick = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   const menuItems = [{name:"ACCUEIL",path:"/"},{name:"CATALOGUE",path:"/catalogue"},{name:"CONTACT",path:"#footer"}];
 
   return (
@@ -43,6 +47,7 @@ export default function Navbari() {
               className="w-full text-white"
               href={item.path}
               size="lg"
+              onClick={togleClick}
             >
               {item.name}
             </Link>
