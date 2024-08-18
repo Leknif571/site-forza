@@ -5,17 +5,14 @@ import { collection, query, where, getDocs} from 'firebase/firestore'
 import { db } from '../../../Service/firebase.config'
 import { BreadcrumbItem, Breadcrumbs } from '@nextui-org/react'
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Chip} from "@nextui-org/react";
-      // import ImageGallery from "react-image-gallery";
-// import LightGallery dependances
-import fjGallery from 'flickr-justified-gallery';
-import LightGallery from 'lightgallery/react';
-import lgZoom from 'lightgallery/plugins/zoom';
-import lgVideo from 'lightgallery/plugins/video';
+
+// import Gallery dependances
+import 'photoswipe/style.css';
 
 // import style
 import "./voiture.css"
-import 'lightgallery/scss/lightgallery.scss';
-import 'lightgallery/scss/lg-zoom.scss';
+import ImageGallery from './ImageGallery/ImageGallery'
+
 
 
 const Voiture = () => {
@@ -83,42 +80,18 @@ const Voiture = () => {
           )}
         <div className='h-5/6'>
 
-          <LightGallery
-              plugins={[lgZoom, lgVideo]}
-              mode="lg-fade"
-              pager={false}
-              thumbnail={true}
-              download={false}
-              galleryId={'nature'}
-              autoplayFirstVideo={false}
-              elementClassNames={'gallery'}
-              mobileSettings={{
-                controls: false,
-                showCloseIcon: false,
-                download: false,
-                rotate: false,
-              }}
-            >
-            
-              { 
-        img.map((u,v) =>
-                
-              <a
-                data-pinterest-text="Pin it2"
-                data-tweet-text="lightGallery slide  2"
-                className="gallery__item"
-                data-src={u.original}>
-                <img
-                  className={v === 0 ? "img-responsive inline-block w-1/3 m-1 first-img" : "img-responsive hidden w-1/3 m-1 all-img md:inline-block"}
-                  src={u.original}
-                />
-                
-              </a>
-      ) 
+        <ImageGallery
+          galleryID="my-gallery"
+          images={img}
+        />
 
-      }
-      
-      </LightGallery>
+        {/* <PhotoSwipeLightbox>
+                  { 
+            
+
+          }
+      </PhotoSwipeLightbox> */}
+
       <p className='block md:hidden'>1/{img.length}</p>
 
         </div>
