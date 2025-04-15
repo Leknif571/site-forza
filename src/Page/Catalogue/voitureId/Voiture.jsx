@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { collection, query, where, getDocs} from 'firebase/firestore'
 import { db } from '../../../Service/firebase.config'
-import { BreadcrumbItem, Breadcrumbs } from '@nextui-org/react'
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Chip} from "@nextui-org/react";
+import { BreadcrumbItem, Breadcrumbs } from "@heroui/react"
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Chip} from "@heroui/react";
 
 // import Gallery dependances
 import 'photoswipe/style.css';
@@ -67,8 +67,8 @@ const Voiture = () => {
             <div className='flex p-2 justify-center md:pt-8 md:pr-40'>
                   <Chip variant='shadow' radius='sm' 
                     color={
-                      voitureD.dispo === "Disponible" ? "success" :
-                      voitureD.dispo === "Disponible sur commande" ? "warning" :
+                      voitureD.dispo ==="Disponible" ? "success" :
+                      voitureD.dispo ==="Disponible sur commande" ? "warning" :
                       "danger"
                     }
                     size='lg'
@@ -85,13 +85,6 @@ const Voiture = () => {
           images={img}
         />
 
-        {/* <PhotoSwipeLightbox>
-                  { 
-            
-
-          }
-      </PhotoSwipeLightbox> */}
-
       <p className='block md:hidden'>1/{img.length}</p>
 
         </div>
@@ -107,7 +100,7 @@ const Voiture = () => {
           {voitureD?.price && (<h2 className='text-4xl md:text-5xl text-center md:text-left pb-3 md:pb-3 md:pl-16 font-titlef'>{voitureD.price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })} </h2> )}
           <ul className='pl-10 pb-5 text-xl list-disc md:pl-20 md:pb-5'>
             <li>{voitureD.etat} <span className='text-red-600 text-2xl'> | </span> {voitureD.kilometers} km <span className='text-red-600 text-2xl'> | </span> {voitureD.chevaux} ch <span className='text-red-600 text-2xl'> | </span> {voitureD.puissance} NW</li>
-            <li>{voitureD.energie} <span className='text-red-600 text-2xl'> | </span> {voitureD.automatique === "on" ? 'Automatique' : "Manuel"} <span className='text-red-600 text-2xl'> | </span> {voitureD.date}</li>
+            <li>{voitureD.energie} <span className='text-red-600 text-2xl'> | </span> {voitureD.automatique ==="on" ? 'Automatique' : "Manuel"} <span className='text-red-600 text-2xl'> | </span> {voitureD.date}</li>
             <li>{voitureD.marque} <span className='text-red-600 text-2xl'> | </span> {voitureD.model}</li>
             <li>{voitureD.nbPorte} portes <span className='text-red-600 text-2xl'> | </span> {voitureD.nbPlace} places</li>
             <li>Couleur intérieur : {voitureD.couleurInt}  <span className='text-red-600 text-2xl'> | </span> Matière : {voitureD.matSiege} </li>

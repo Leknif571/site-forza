@@ -30,7 +30,7 @@ export default function ImageGallery(props) {
               key={props.galleryID + '-' + index}
               >
               <img
-                className={index === 0 ? "img-responsive inline-block w-1/3 m-1 first-img" : "img-responsive hidden w-1/3 m-1 all-img md:inline-block"}
+                className={index ===0 ? "img-responsive inline-block w-1/3 m-1 first-img" : "img-responsive hidden w-1/3 m-1 all-img md:inline-block"}
                 src={img.original}
               />
               

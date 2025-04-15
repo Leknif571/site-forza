@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import MenuService from './MenuService/MenuService'
-import BlocTextService from './BlocTextService/BlocTextService'
+
 import './servicevp.css'
 
 const ServiceVp = () => {
@@ -10,26 +9,21 @@ const ServiceVp = () => {
 
   return (
     <div>
-      <div className='hidden lg:h-fit lg:flex lg:flex-row bg-service w-full'>
-        <div className='w-2/12 border-menu'>
-          <div className="grid grid-cols h-full content-center">
-            <MenuService whichClick={whichClicked} setWhichClicked={setWhichClicked} />
+      {/* 
+        faire une div qui est marger a p-4 de tout les coter avec un input text pour insérer un mail pour une mailing list et une image a coté
+      */}
+      <div className='p-4 m-16 rounded-lg bg-gray-800 border border-white shadow-lg'>
+        <h2 className='text-2xl text-left'>Newsletter</h2>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pl-0 p-4'>
+          <div>
+          <input type="text" className='h-12 rounded-xl border border-red-400 max-w-96 p-4' placeholder='Entrer votre e-mail' />
+          </div>
+          <div>
+            <img src="" alt="" />
           </div>
         </div>
-
-        <div className='w-5/12 p-12'>
-          <BlocTextService whichClick={whichClicked}/>
-        </div>
-
-        <div className={"w-5/12 "+('bg-img-'+whichClicked)}>
-          <div className='h-full'/>
-        </div>
-      </div> 
-
-      <div className='h-fit bg-service w-full lg:hidden'>
-          <BlocTextService whichClick={loop}/> 
-     
-      </div>
+    </div>
     </div>
   )
 }

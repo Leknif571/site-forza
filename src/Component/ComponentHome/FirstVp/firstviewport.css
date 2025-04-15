@@ -1,6 +1,6 @@
 .bg-viewport-img{
-    height: 100vh;
-    background-image: url("../../../assets/images/carImage1.jpg");
+    height: 95vh;
+    background-color: black;
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover 
@@ -22,5 +22,11 @@
     width: 12.1rem;
     transition:cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s
 
+}
+
+.swiper {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 

@@ -9,7 +9,7 @@ const Home = () => {
     <div>
         <FirstViewport/>
         <PresentationVp/>
-        <ServiceVp/>
+        {/* <ServiceVp/> */}
     </div>
   )
 }

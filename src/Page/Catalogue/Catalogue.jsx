@@ -4,7 +4,7 @@ import CardVoiture from '../../Component/ComponentMultiUse/Card'
 import { useState, useEffect } from 'react'
 import { collection } from 'firebase/firestore'
 import { getDocs } from 'firebase/firestore'
-import { Breadcrumbs,BreadcrumbItem} from '@nextui-org/react'
+import { Breadcrumbs,BreadcrumbItem} from "@heroui/react"
 
 import {db} from '../../Service/firebase.config'
 
@@ -40,8 +40,8 @@ const Catalogue = () => {
     }, [])
 
     const getByName = titreM => {
-        if(titreM.target.value !== 'toutes'){
-            let modelList = marque.find(({ marque }) => marque === titreM.target.value)
+        if(titreM.target.value !=='toutes'){
+            let modelList = marque.find(({ marque }) => marque ===titreM.target.value)
             setModel(modelList.model)
         }
 
@@ -50,8 +50,8 @@ const Catalogue = () => {
     const filterMarque = (valueSelectMarque) =>
     {
         setVoitures(copyVoitures)
-        if(valueSelectMarque !== 'toutes'){
-            let newArrayVoitureMa = copyVoitures.filter((voiture) => voiture.marque === valueSelectMarque)
+        if(valueSelectMarque !=='toutes'){
+            let newArrayVoitureMa = copyVoitures.filter((voiture) => voiture.marque ===valueSelectMarque)
             setVoitures(newArrayVoitureMa)
         }else{
             setVoitures(copyVoitures)
@@ -62,8 +62,8 @@ const Catalogue = () => {
     const filterDisponibilite = (valueSelectDispo) =>
     {
         setVoitures(copyVoitures)
-        if(valueSelectDispo.target.value !== 'tout'){
-            let newArrayVoitureDis = copyVoitures.filter((voiture) => voiture.dispo === valueSelectDispo.target.value)
+        if(valueSelectDispo.target.value !=='tout'){
+            let newArrayVoitureDis = copyVoitures.filter((voiture) => voiture.dispo ===valueSelectDispo.target.value)
             setVoitures(newArrayVoitureDis)
         }else{
             setVoitures(copyVoitures)
@@ -72,8 +72,8 @@ const Catalogue = () => {
 
      const filtreModel = valueSelectModel => {
         setVoitures(copyVoitures)
-        if(valueSelectModel !== 'tout'){
-            let newArrayVoitureMo = copyVoitures.filter((voiture) => voiture.model === valueSelectModel.target.value)
+        if(valueSelectModel !=='tout'){
+            let newArrayVoitureMo = copyVoitures.filter((voiture) => voiture.model ===valueSelectModel.target.value)
             setVoitures(newArrayVoitureMo)
             
         }else{
@@ -106,8 +106,8 @@ const Catalogue = () => {
 
 
 
-        <div className='flex flex-col md:flex md:flex-row justify-center items-center gap-4 p-8'>
-            <div className='flex items-center gap-2'>
+        <div className='flex flex-col md:flex md:flex-row justify-center items-center gap-4'>
+            <div className='flex items-center'>
                 <div className="custom-select">
                     <select 
                     name="marque" id="marque"
@@ -159,7 +159,7 @@ const Catalogue = () => {
 
         </div>
 
-        <div className='card-container'>
+        <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-8'>
             {
                 voitures.length > 0 ?
                  voitures.map(v  =>

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@heroui/react";
 import './bloctext.css'
 
 
@@ -78,7 +78,7 @@ const BlocTextService = ({whichClick}) => {
   return (
     <div className='p-4'>
       <div className='text-red-500 text-xl font-titlef text-left'>Nos services</div> 
-      {whichClick === 5 ? 
+      {whichClick ===5 ? 
         textService.map(v => 
             <div key={v.id}>
               
@@ -109,25 +109,25 @@ const BlocTextService = ({whichClick}) => {
         
 
           {
-            whichClick === 1 ?
+            whichClick ===1 ?
             <Button className='mt-16' color='danger' variant='solid' size='lg' onClick={() => {onOpen()}}>Comment faire ?</Button>
             : ''
           }
 
           {
-            whichClick === 3 ?
+            whichClick ===3 ?
             <Button className='mt-16' color='danger' variant='solid' size='lg' onClick={() => {onOpen()}}>En savoir plus</Button>
             : ''
           }
 
           {
-            whichClick === 4 ?
+            whichClick ===4 ?
             <Button className='mt-16' color='danger' variant='solid' size='lg' onClick={() => {onOpen()}}>Comment ça marche ?</Button>
             : ''
           }
 
           {
-            whichClick === 0 ?
+            whichClick ===0 ?
             <a href="/catalogue"><Button className='mt-16' color='danger' variant='solid' size='lg'>Notre catalogue</Button></a>
             : ''
           }
