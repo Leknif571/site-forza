@@ -146,7 +146,7 @@ const Footer = () => {
                
               </div>
               <hr className="my-4 border-gray-700"/>
-              <div class="w-full flex flex-row justify-between text-neutral-400">
+              <div class="w-full flex flex-col sm:flex-row justify-between text-neutral-400">
                 <p class="text-sm text-center">
                   <span>Copyright © 2025 
                     <a class="font-bold hover:underline hover:text-[#dc0000]" href="/"> F1rza</a>
@@ -155,17 +155,17 @@ const Footer = () => {
                     <p class="mt-1 text-sm text-center items-center">
                     <div class="mt-1 z-10 flex rounded text-sm text-center items-center">
                       <span class="relative sm:mr-4 flex flex-col justify-center">
-                        <a href="https://www.youtube.com/F1RSTMOTORS" target="_blank" class="inline-block rounded-full px-1 py-1 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg ">
+                        <a href="https://www.youtube.com/" target="_blank" class="inline-block rounded-full px-1 py-1 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg ">
                           <img alt="facebbok" fetchpriority="low" loading="lazy" decoding="async" data-nimg="1" src={IconTikTok} className='radius-social-logo'/>
                         </a>
                       </span>
                       <span class="relative sm:mr-4 flex flex-col justify-center">
-                        <a href="https://www.instagram.com/f1rstmotors/" target="_blank" class="inline-block rounded-full px-1 py-1 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg ">
+                        <a href="https://www.instagram.com/forza.lu/" target="_blank" class="inline-block rounded-full px-1 py-1 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg ">
                           <img alt="facebbok" fetchpriority="low" loading="lazy" decoding="async" data-nimg="1" src={IconInsta} className='radius-social-logo'/>
                         </a>
                       </span>
                       <span class="relative sm:mr-4 flex flex-col justify-center">
-                        <a href="https://www.instagram.com/f1rstmotors/" target="_blank" class="inline-block rounded-full px-1 py-1 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg ">
+                        <a href="https://www.snapchat.com/add/forza.lu?locale=ar-AR" target="_blank" class="inline-block rounded-full px-1 py-1 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg ">
                           <img alt="facebbok" fetchpriority="low" loading="lazy" decoding="async" data-nimg="1" src={IconSnap} className='radius-social-logo'/>
                         </a>
                       </span>
