@@ -13,7 +13,7 @@ export default function Navbari() {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const menuItems = [{name:"VOITURE",path:"/", extra : true},{name:"NEWS",path:"/catalogue", extra: false},{name:"ABOUT",path:"#footer", extra: false}, {name:"CONTACT",path:"#footer", extra: false}];
+  const menuItems = [{name:"CARS",path:"/", extra : true},{name:"NEWS",path:"/catalogue", extra: false},{name:"ABOUT",path:"#footer", extra: false}, {name:"CONTACT",path:"#footer", extra: false}];
 
   return (
     <nav className="hidden sticky top-0 z-50 bg-black w-full h-16 md:flex justify-center">
@@ -24,7 +24,7 @@ export default function Navbari() {
                   // Liste des éléments de menu, si extra est vrai alors on ajoute une petit icone a coté du titre est on créer un menu déroulant en hover
                   // sinon on affiche juste le titre
                   item.extra ? (
-                    <li key={`${item}-${index}`} className="text-gray-200 hover:text-red-700 cursor-pointer font-titlef text-lg xl:text-xl group relative">
+                    <li key={`${item}-${index}`} className="text-gray-200 hover:text-red-700 cursor-pointer font-titlef text-lg xl:text-xl group/first relative">
                       <Link className="text-gray-200 hover:text-red-700 cursor-pointer font-titlef text-lg xl:text-xl" href={item.path} onClick={togleClick}>
                           {/* Ajout d'une icone en forme de chevrons vers le bas a coté du titre */}
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline-block mr-2" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -32,18 +32,18 @@ export default function Navbari() {
                           </svg>
                           {item.name}
                       </Link>
-                   <div className="hidden flex flex-col absolute group-hover:block bg-stone-950 text-white p-2 mt-2 z-10 shadow-lg transition-all duration-300 ease-in-out w-max top-6">
+                   <div className="hidden flex flex-col absolute group-hover/first:block bg-stone-950 text-white p-2 mt-2 z-10 shadow-lg transition-all duration-300 ease-in-out w-max top-6">
                                   <div>
                                       <ul className="text-left">
-                                        <li className="cursor-pointer font-titlef text-lg xl:text-xl border-b-1 w-max pb-2">
+                                        <li className="cursor-pointer font-titlef relative group/second text-lg xl:text-xl border-b-1 w-max pb-2">
                                           <div className="h-16 hover:bg-stone-800 hover:rounded-md">
                                             <div className="w-64">
                                                 <div className="content-center justify-between flex items-center border-gray-300">
                                                   <a href="/catalogue">
                                                     <div className="p-2">
-                                                      <div className="">Véhicule disponible</div>
+                                                      <div className="">Inventory</div>
                                                       <div className="text-sm text-red-600 pr-2">
-                                                        Voir nos voitures disponibles
+                                                        Voir toutes nos voitures
                                                       </div>
                                                     </div>
                                                   </a>
@@ -56,19 +56,26 @@ export default function Navbari() {
                                                       <path d="M16 14.75C16.8284 14.75 17.5 14.0784 17.5 13.25C17.5 12.4216 16.8284 11.75 16 11.75C15.1716 11.75 14.5 12.4216 14.5 13.25C14.5 14.0784 15.1716 14.75 16 14.75Z" fill="#e60000"></path> 
                                                     </g>
                                                   </svg>
-                                                </div>
+                                              </div>
                                             </div>
                                           </div>
+                                          <div className="absolute left-full top-0 hidden group-hover/second:block bg-stone-900 text-white w-64 p-4 shadow-lg z-20">
+                                            <ul>
+                                              <li className="hover:bg-stone-700 p-2 rounded">Available cars</li>
+                                              <li className="hover:bg-stone-700 p-2 rounded">Sold cars</li>
+                                            </ul>
+                                          </div>
                                         </li>
+                                        
                                         <li className="cursor-pointer font-titlef text-lg xl:text-xl border-b-1 w-max pb-2">
                                           <div className="h-16 hover:bg-stone-800 hover:rounded-md">
                                             <div>
                                                 <div className="w-64 content-center justify-between flex items-center border-gray-300">
                                                 <a href="/catalogue">
                                                   <div className="p-2">
-                                                    <div className="">Véhicules vendus</div>
+                                                    <div className="">Featured stock</div>
                                                     <div className="text-sm text-red-600 pr-2">
-                                                      Voir nos voitures vendus
+                                                      Voir nos prochaines voitures
                                                     </div>
                                                   </div>
                                                 </a>
@@ -121,39 +128,6 @@ export default function Navbari() {
         </ul>
     </div>
     </nav>
-  // <Navbar
-  //     isBordered
-  //     isMenuOpen={isMenuOpen}
-  //     onMenuOpenChange={setIsMenuOpen}
-  //   >
-
-  //     <NavbarContent className="flex gap-4" justify="center">
-  //       <NavbarBrand>
-
-  //       </NavbarBrand>
-  //     </NavbarContent>
-
-  //     <NavbarContent className="flex" justify="end" >
-  //       <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
-        
-  //     </NavbarContent>
-
-
-
-  //     <NavbarMenu className="bg-black items-center" >
-  //       {menuItems.map((item, index) => (
-  //         <NavbarMenuItem key={`${item}-${index}`}>
-  //           <Link
-  //             className="w-full text-white"
-  //             href={item.path}
-  //             size="lg"
-  //             onClick={togleClick}
-  //           >
-  //             {item.name}
-  //           </Link>
-  //         </NavbarMenuItem>
-  //       ))}
-  //     </NavbarMenu>
-  //   </Navbar>
+ 
   )
 }

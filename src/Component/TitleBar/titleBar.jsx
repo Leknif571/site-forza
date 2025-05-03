@@ -40,11 +40,19 @@ const TitleBar = () => {
         </div>
 
         <div className={"h-screen" + (isOpen ? " block" : " hidden")}>
-          <div className="space-y-1 px-2 pt-2 pb-3">
-            <a href="/" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-white" aria-current="page">Home</a>
-            <a href="/catalogue" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Nos véhicules</a>
-            <a href="/sell" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Vendre sa voiture</a>
-            <a href="/about" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">A propos</a>
+          <div className="space-y-1 px-2 pt-4 pb-3">
+            <div className='border-b-1 border-stone-400'>
+              <a href="/" className="block  rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-white" aria-current="page">HOME</a>
+            </div>
+            <div className='border-b-1 border-stone-400'>
+              <a href="/catalogue" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">CARS</a>
+            </div>
+            <div className='border-b-1 border-stone-400'>
+              <a href="/sell" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SELL YOUR CAR</a>
+            </div>
+            <div className='border-b-1 border-stone-400'>
+              <a href="/about" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">ABOUT</a>
+            </div>
           </div>
         </div>
         <hr className="my-2 border-gray-700"/>

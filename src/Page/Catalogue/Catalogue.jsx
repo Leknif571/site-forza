@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { collection } from 'firebase/firestore'
 import { getDocs } from 'firebase/firestore'
 import { Breadcrumbs,BreadcrumbItem} from "@heroui/react"
+import MenuMarque from '../../Component/MenuMarque/MenuMarque'
 
 import {db} from '../../Service/firebase.config'
 
@@ -29,23 +30,10 @@ const Catalogue = () => {
                     setCopyVoitures(voituresData)
                 })
             }
-            const getMarque = async () => {
-                await getDocs(collectionRefM).then((marque) => {
-                    let marqueData = marque.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-                    setMarque(marqueData);
-                })
-            }
-            getMarque();
+
             getVoitures();
     }, [])
 
-    const getByName = titreM => {
-        if(titreM.target.value !=='toutes'){
-            let modelList = marque.find(({ marque }) => marque ===titreM.target.value)
-            setModel(modelList.model)
-        }
-
-    }
 
     const filterMarque = (valueSelectMarque) =>
     {
@@ -58,31 +46,6 @@ const Catalogue = () => {
             setModel([])
         }
     }
-
-    const filterDisponibilite = (valueSelectDispo) =>
-    {
-        setVoitures(copyVoitures)
-        if(valueSelectDispo.target.value !=='tout'){
-            let newArrayVoitureDis = copyVoitures.filter((voiture) => voiture.dispo ===valueSelectDispo.target.value)
-            setVoitures(newArrayVoitureDis)
-        }else{
-            setVoitures(copyVoitures)
-        }
-    }
-
-     const filtreModel = valueSelectModel => {
-        setVoitures(copyVoitures)
-        if(valueSelectModel !=='tout'){
-            let newArrayVoitureMo = copyVoitures.filter((voiture) => voiture.model ===valueSelectModel.target.value)
-            setVoitures(newArrayVoitureMo)
-            
-        }else{
-            setVoitures(copyVoitures)
-        }
-     }
-
-
-    
 
 
   return (
@@ -104,63 +67,17 @@ const Catalogue = () => {
             </div>
         </div>
 
-
-
-        <div className='flex flex-col md:flex md:flex-row justify-center items-center gap-4'>
-            <div className='flex items-center'>
-                <div className="custom-select">
-                    <select 
-                    name="marque" id="marque"
-                    className='font-titlef'
-                    onChange={(e) => {getByName(e); filterMarque(e.target.value)}}
-                    >
-                        <option className='font-titlef' value={'toutes'}>Marque</option>
-                        {
-                            marque.map(v => 
-                            <option key={v.marque} value={v.marque}>{v.marque}</option>
-                            )
-                        }
-                        
-                    </select>
-                </div>
-
+        <div className='p-2'>
+            <MenuMarque />
+            <div className='flex flex-row md:flex-row gap-4 p-2'>
+                <button className='h-12 w-60 bg-rose-800 border-rose-800 hover:bg-rose-500c border-1 rounded-md'>En stock</button>
+                <button className='h-12 w-60 border-rose-800 hover:bg-rose-500 border-1 rounded-md'>Vendu</button>
             </div>
-
-            <div className='flex items-center gap-2'>
-                <div className="custom-select">
-                    <select
-                    className='font-titlef'
-                    onChange={filtreModel}
-                    >   
-                        <option className='font-titlef' value={'tout'}>Modèle</option>
-                        {
-                            model.map(v => 
-                            <option value={v}>{v}</option>
-                            )
-                        }
-                    </select>
-                </div>
-            </div>
-
-            <div className='flex items-center gap-2 '>
-                <div className="custom-select">
-                    <select
-                    className='font-titlef'
-                    onChange={filterDisponibilite}
-                    >   
-                        <option value={'tout'}>Disponibilité</option>
-                        <option value={'Disponible'} >Disponible</option>
-                        <option value={'Disponible sur commande'} >Disponible sur commande</option>
-                        <option value={'Vendu'} >Vendu</option>
-                        
-                    </select>
-                </div>
-            </div>
-
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-8'>
-            {
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 xl:gap-6 p-2 gap-2 xl:p-4 pt-0">
+        {
                 voitures.length > 0 ?
                  voitures.map(v  =>
                     <CardVoiture arrayElementCar={v}/>

@@ -3,6 +3,7 @@ import './presentationvp.css'
 import CardVoiture from '../../ComponentMultiUse/Card'
 import { useState, useEffect } from 'react'
 import { db } from '../../../Service/firebase.config'
+import MenuMarque from '../../MenuMarque/MenuMarque'
 
 import { collection, getDocs, limit, orderBy, query, startAfter } from 'firebase/firestore'
 
@@ -46,9 +47,12 @@ const PresentationVp = () => {
   return (
     <div>
       <h2 className='font-titlef text-gray-200 text-2xl md:text-4xl text-left p-6'>
-          Tendances en stock
+          Available cars
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xm:grid-cols-4 gap-4 p-4 pt-0">
+      <div className='p-2'>
+        <MenuMarque />
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 xl:gap-6 p-2 gap-2 xl:p-4 pt-2">
       {
       voitures.length > 0 ? 
         voitures.map((car, index) => (

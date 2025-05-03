@@ -1,26 +1,32 @@
 import React from 'react'
-import { useState } from 'react'
+import ImageVoiture from '../../../assets/images/carImage1.png'
 
 import './servicevp.css'
 
 const ServiceVp = () => {
-  let [whichClicked, setWhichClicked] = useState(0)
-  let loop = 5
 
   return (
-    <div>
+    <div className='h-full'>
       {/* 
         faire une div qui est marger a p-4 de tout les coter avec un input text pour insérer un mail pour une mailing list et une image a coté
       */}
-      <div className='p-4 m-16 rounded-lg bg-gray-800 border border-white shadow-lg'>
-        <h2 className='text-2xl text-left'>Newsletter</h2>
-
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pl-0 p-4'>
+      <div className='p-4 mx-2 md:mx-48 my-6 rounded-lg bg-stone-900 border border-gray-600 shadow-lg'>
+        <div className='flex flex-col md:flex-row justify-around md:gap-4 pl-0 p-4'>
           <div>
-          <input type="text" className='h-12 rounded-xl border border-red-400 max-w-96 p-4' placeholder='Entrer votre e-mail' />
+            <img src={ImageVoiture} className='w-full md:w-[32rem]' alt="" />
           </div>
-          <div>
-            <img src="" alt="" />
+          <div className='w-full py-2 md:w-1/2'>
+            <h2 className='font-titlef text-gray-200 text-2xl md:text-4xl text-left pb-2'>Newsletter</h2>
+            <p className='pb-4 text-gray-400'>
+              Reste informer de toute nos nouveautés, promotions bon plan et partenaria en vous inscrivant à notre newsletter.
+            </p>
+            <div className='relative w-full'>
+              <input type="text" className='h-12 w-full rounded-2xl border border-red-400 p-4 bg-stone-950' placeholder='Entrer votre e-mail' />
+              <button className='rounded-r-2xl border border-red-700 absolute bg-stone-900 top-1 right-1 h-10 w-10'>+</button>
+            </div>
+            <p className='pt-4 text-sm text-gray-400'>
+              En vous inscrivant à notre newsletter, vous acceptez de recevoir des e-mails de notre part concernant nos produits et services ainsi que nos partenaires. 
+            </p>
           </div>
         </div>
     </div>

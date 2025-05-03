@@ -6,8 +6,6 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-
-import ImageFirst from '../../../assets/images/img_pr/img_fr1.png'
 import ImageSecond from '../../../assets/images/img_pr/img_fr2.png'
 import ImageThird from '../../../assets/images/img_pr/img_fr3.png'
 import ImageFourth from '../../../assets/images/img_pr/img_fr4.png'
@@ -38,17 +36,15 @@ const FirstViewport = () => {
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)}
           >
+
               <SwiperSlide>
-                <img src={ImageFirst} alt="" style={{width:'100%'}} />
+                <img src={ImageSecond} alt="" className='md:h-[32rem] md:object-cover' style={{width:'100%'}}/>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={ImageSecond} alt="" style={{width:'100%'}}/>
+                <img src={ImageThird} alt="" className='md:h-[32rem] md:object-cover' style={{width:'100%'}}/>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={ImageThird} alt="" style={{width:'100%'}}/>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={ImageFourth} alt="" style={{width:'100%'}}/>
+                <img src={ImageFourth} alt="" className='md:h-[32rem] md:object-cover' style={{width:'100%'}}/>
               </SwiperSlide>
           </Swiper>
           {/* </div> */}

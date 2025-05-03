@@ -1,46 +1,16 @@
-import React, { useState } from 'react'
-import { Input } from '@heroui/react';
 import Iconforza from '../../assets/images/ForzaLogoR.png';
 import IconInsta from '../../assets/images/social_logo/instag.png';
 import IconSnap from '../../assets/images/social_logo/Snapchat.png';
 import IconTikTok from '../../assets/images/social_logo/tiktok.webp';
-
-
-
-
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@heroui/react";
+import IconYtb from '../../assets/images/social_logo/Youtube_logo.png';
 import './footer.css'
-import { faContactBook } from '@fortawesome/free-regular-svg-icons';
 
 
 const Footer = () => {
-  const {isOpen, onOpen, onOpenChange} = useDisclosure();
-  let [whichSection, setWhichSection] = useState(0)
-
-  // let tableText = [
-  //   {
-  //     title: 'Contact',
-  //     corps : <div>
-  //                 <p>Adresse e-mail : forzalu.com@gmail.com </p> 
-  //                  <p>Numéro téléphone : 06 29 90 52 06 <span className='text-red-600 text-2xl'> | </span> 07 67 18 32 15</p>
-  //             </div>
-  //   },
-  //   {
-  //     title: 'Mentions légales',
-  //     corps : <div>
-  //                 <p>Raison social : Forza</p>
-  //                 <p>Numéro de siret : XXX XXXX XXXX</p>
-  //             </div>
-  //   },
-  //   {
-  //     title: 'Crédit',
-  //     corps : <div>Ici tout relatif au crédit</div>
-  //   }
-  // ]
 
   return (
-        <footer className="bg-[#EFEFEF] dark:bg-[#0F161E] shadow-md text-white p-8" id='footer'>
-            <div className="mx-auto w-full p-4 py-6 lg:py-8">
+        <footer className="bg-[#EFEFEF] dark:bg-[#0F161E] shadow-md text-white p-2 md:p-8" id='footer'>
+            <div className="mx-auto w-full p-1 md:p-4 py-6 lg:py-8">
               <div className="grid grid-cols-1 gap-8 sm:gap-6 sm:grid-cols-3 md:grid-cols-5 text-center sm:text-left lg:text-left max-w-screen-2xl 2xl:mx-auto">
                   <div class="m-4 sm:col-span-3 md:col-span-2 flex flex-col justify-center lg:text-left mt-12 lg:mt-0">
                     <a class="flex items-center" href="/">
@@ -113,12 +83,12 @@ const Footer = () => {
                       </a>
                     </li>
                     <li class="mb-4">
-                      <a class="flex flex-row justify-center sm:justify-start gap-2 text-neutral-400 hover:underline hover:text-[#dc0000] text-sm" href="mailto:forzalu.com@gmail.com">
+                      <a class="flex flex-row justify-center sm:justify-start gap-2 text-neutral-400 hover:underline hover:text-[#dc0000] text-sm" href="mailto:f1rza.officiel@gmail.com">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" class="w-5 h-5">
                           <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"/>
                           <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/>
                         </svg>
-                            forzalu.com@gmail.com 
+                        f1rza.officiel@gmail.com                      
                       </a>
                     </li>
                     <li class="mb-4">
@@ -153,22 +123,27 @@ const Footer = () => {
                     . All Rights Reserved</span>
                     </p>
                     <p class="mt-1 text-sm text-center items-center">
-                    <div class="mt-1 z-10 flex rounded text-sm text-center items-center">
+                    <div class="mt-1 z-10 flex rounded text-sm justify-center items-center">
                       <span class="relative sm:mr-4 flex flex-col justify-center">
-                        <a href="https://www.youtube.com/" target="_blank" class="inline-block rounded-full px-1 py-1 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg ">
-                          <img alt="facebbok" fetchpriority="low" loading="lazy" decoding="async" data-nimg="1" src={IconTikTok} className='radius-social-logo'/>
+                        <a href="https://www.tiktok.com/@f1rza.official" target="_blank" class="inline-block rounded-full px-1 py-1 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg ">
+                          <img alt="tiktok" fetchpriority="low" loading="lazy" decoding="async" data-nimg="1" src={IconTikTok} className='radius-social-logo'/>
                         </a>
                       </span>
                       <span class="relative sm:mr-4 flex flex-col justify-center">
-                        <a href="https://www.instagram.com/forza.lu/" target="_blank" class="inline-block rounded-full px-1 py-1 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg ">
-                          <img alt="facebbok" fetchpriority="low" loading="lazy" decoding="async" data-nimg="1" src={IconInsta} className='radius-social-logo'/>
+                        <a href="https://www.instagram.com/f1rza.official/" target="_blank" class="inline-block rounded-full px-1 py-1 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg ">
+                          <img alt="insta" fetchpriority="low" loading="lazy" decoding="async" data-nimg="1" src={IconInsta} className='radius-social-logo'/>
                         </a>
                       </span>
                       <span class="relative sm:mr-4 flex flex-col justify-center">
-                        <a href="https://www.snapchat.com/add/forza.lu?locale=ar-AR" target="_blank" class="inline-block rounded-full px-1 py-1 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg ">
-                          <img alt="facebbok" fetchpriority="low" loading="lazy" decoding="async" data-nimg="1" src={IconSnap} className='radius-social-logo'/>
+                        <a href="https://www.snapchat.com/add/f1rza.off?locale=fr-FR" target="_blank" class="inline-block rounded-full px-1 py-1 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg ">
+                          <img alt="snap" fetchpriority="low" loading="lazy" decoding="async" data-nimg="1" src={IconSnap} className='radius-social-logo'/>
                         </a>
                       </span>
+                      {/* <span class="relative sm:mr-4 flex flex-col justify-center">
+                        <a href="https://www.snapchat.com/add/f1rza.off?locale=fr-FR" target="_blank" class="inline-block rounded-full px-1 py-1 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg ">
+                          <img alt="snap" fetchpriority="low" loading="lazy" decoding="async" data-nimg="1" src={IconYtb} className='radius-social-logo'/>
+                        </a>
+                      </span> */}
                   </div>
                     </p>
               </div>
