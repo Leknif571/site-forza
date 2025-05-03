@@ -6,21 +6,19 @@ import { collection } from 'firebase/firestore'
 import { getDocs } from 'firebase/firestore'
 import { Breadcrumbs,BreadcrumbItem} from "@heroui/react"
 import MenuMarque from '../../Component/MenuMarque/MenuMarque'
+import { useParams } from 'react-router-dom'
 
 import {db} from '../../Service/firebase.config'
 
 
 
 const Catalogue = () => {
+    const { id } = useParams();
 
     let [voitures, setVoitures] = useState([])
     let [copyVoitures, setCopyVoitures] = useState([])
 
-    const [marque, setMarque] = useState([])
-    const [model, setModel] = useState([])
-
     const collectionRef = collection(db, "Voitures" )
-    const collectionRefM = collection(db, 'Marque')
 
     useEffect(() => {
             const getVoitures = async () => {
@@ -38,19 +36,36 @@ const Catalogue = () => {
     const filterMarque = (valueSelectMarque) =>
     {
         setVoitures(copyVoitures)
-        if(valueSelectMarque !=='toutes'){
-            let newArrayVoitureMa = copyVoitures.filter((voiture) => voiture.marque ===valueSelectMarque)
+        if(valueSelectMarque !== 'all'){
+            let newArrayVoitureMa = copyVoitures.filter((voiture) => voiture.marque === valueSelectMarque)
             setVoitures(newArrayVoitureMa)
         }else{
             setVoitures(copyVoitures)
-            setModel([])
         }
+    }
+
+    const filterStock = (valueSelectStock) =>
+        {
+            setVoitures(copyVoitures)
+            if(valueSelectStock !=='all'){
+                let newArrayVoitureMa = copyVoitures.filter((voiture) => voiture.marque === valueSelectStock)
+                setVoitures(newArrayVoitureMa)
+            }else{
+                setVoitures(copyVoitures)
+            }
+        }
+
+    const redirect = (linkRed) => {
+        if(id === 'available' && linkRed === '/catalogue/sell'){
+            window.location.href = linkRed
+        } else if(id === 'sell' && linkRed === '/catalogue/available'){
+            window.location.href = linkRed
+        } 
     }
 
 
   return (
     <div className='bg-black h-full'>
-
         <div className='hidden lg:block lg:w-full lg:pl-16 lg:pt-8'>
             <Breadcrumbs key='danger' color='danger' size='lg'>
                 <BreadcrumbItem href='/'>Accueil</BreadcrumbItem>
@@ -67,14 +82,15 @@ const Catalogue = () => {
             </div>
         </div>
 
-        <div className='p-2'>
-            <MenuMarque />
-            <div className='flex flex-row md:flex-row gap-4 p-2'>
-                <button className='h-12 w-60 bg-rose-800 border-rose-800 hover:bg-rose-500c border-1 rounded-md'>En stock</button>
-                <button className='h-12 w-60 border-rose-800 hover:bg-rose-500 border-1 rounded-md'>Vendu</button>
-            </div>
-        </div>
-
+        { id !== 'featured' &&
+                <div className='p-2'>
+                    <MenuMarque onSelectMarque={filterMarque}/>
+                    <div className='flex flex-row md:flex-row gap-4 p-2'>
+                        <button onClick={() => redirect('/catalogue/available')} className={"h-12 w-60 border-rose-800 hover:bg-rose-500 border-1 rounded-md" + (id === 'available' ? ' bg-rose-800' :'')}>En stock</button>
+                        <button onClick={() => redirect('/catalogue/sell')} className={"h-12 w-60 border-rose-800 hover:bg-rose-500 border-1 rounded-md" + (id === 'sell' ? ' bg-rose-800' :'')}>Vendu</button> 
+                    </div>
+                </div>
+        }
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 xl:gap-6 p-2 gap-2 xl:p-4 pt-0">
         {

@@ -45,7 +45,13 @@ const TitleBar = () => {
               <a href="/" className="block  rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-white" aria-current="page">HOME</a>
             </div>
             <div className='border-b-1 border-stone-400'>
-              <a href="/catalogue" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">CARS</a>
+              <a href="/catalogue/available" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">AVAILABLE CARS</a>
+            </div>
+            <div className='border-b-1 border-stone-400'>
+              <a href="/catalogue/sell" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SELL CARS</a>
+            </div>
+            <div className='border-b-1 border-stone-400'>
+              <a href="/catalogue/featured" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">FEATURED STOCK</a>
             </div>
             <div className='border-b-1 border-stone-400'>
               <a href="/sell" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SELL YOUR CAR</a>

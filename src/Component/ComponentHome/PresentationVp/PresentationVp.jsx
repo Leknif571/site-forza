@@ -12,6 +12,12 @@ const PresentationVp = () => {
 
     let [voitures, setVoitures] = useState([])
     let [voitures2, setVoitures2] = useState([])
+
+    let [copyVoitures, setCopyVoitures] = useState([])
+    let [copyVoitures2, setCopyVoitures2] = useState([])
+    
+    
+
     let [visible, setVisible] = useState(false)
 
     let [lastVisible, setLastVisible] = useState(null)
@@ -27,6 +33,7 @@ const PresentationVp = () => {
                 await getDocs(queryHandle).then((voiture) => {
                     let voituresData = voiture.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
                     setVoitures(voituresData);  
+                    setCopyVoitures(voituresData)
                     setLastVisible(voiture.docs[voiture.docs.length-1]);            
                 })
             }
@@ -35,12 +42,32 @@ const PresentationVp = () => {
             const getSecondVoiture = async () => {
               await getDocs(query(collectionRef2, limit(8), orderBy("price"), startAfter(lastVisible))).then((voiture) => {
                   let voituresData = voiture.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-                  setVoitures2(voituresData);              
+                  setVoitures2(voituresData);   
+                  setCopyVoitures2(voituresData)           
               }
             )}
             getSecondVoiture();
 
     }, [])
+
+    
+    const filterMarque = (valueSelectMarque) =>
+      {
+
+          setVoitures(copyVoitures)
+          setVoitures2(copyVoitures2)
+          if(valueSelectMarque !== 'all'){
+              let newArrayVoitureMa = voitures.filter((voiture) => voiture.marque === valueSelectMarque)
+              let newArrayVoitureMa2 = voitures2.filter((voiture) => voiture.marque === valueSelectMarque)
+
+              setVoitures(newArrayVoitureMa)
+              setVoitures2(newArrayVoitureMa2)
+
+          }else{
+              setVoitures(copyVoitures)
+              setVoitures2(copyVoitures2)
+          }
+      }
 
 
 
@@ -50,7 +77,7 @@ const PresentationVp = () => {
           Available cars
       </h2>
       <div className='p-2'>
-        <MenuMarque />
+      <MenuMarque onSelectMarque={filterMarque}/>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 xl:gap-6 p-2 gap-2 xl:p-4 pt-2">
       {

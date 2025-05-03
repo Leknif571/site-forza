@@ -39,7 +39,7 @@ export default function Navbari() {
                                           <div className="h-16 hover:bg-stone-800 hover:rounded-md">
                                             <div className="w-64">
                                                 <div className="content-center justify-between flex items-center border-gray-300">
-                                                  <a href="/catalogue">
+                                                  <a href="/catalogue/available">
                                                     <div className="p-2">
                                                       <div className="">Inventory</div>
                                                       <div className="text-sm text-red-600 pr-2">
@@ -61,8 +61,16 @@ export default function Navbari() {
                                           </div>
                                           <div className="absolute left-full top-0 hidden group-hover/second:block bg-stone-900 text-white w-64 p-4 shadow-lg z-20">
                                             <ul>
-                                              <li className="hover:bg-stone-700 p-2 rounded">Available cars</li>
-                                              <li className="hover:bg-stone-700 p-2 rounded">Sold cars</li>
+                                              <li className="hover:bg-stone-700 p-2 rounded">
+                                                <a href="/catalogue/available">
+                                                  Available cars
+                                                </a>
+                                              </li>
+                                              <li className="hover:bg-stone-700 p-2 rounded">
+                                                <a href="/catalogue/sell">
+                                                  Sold cars
+                                                </a>
+                                              </li>
                                             </ul>
                                           </div>
                                         </li>
@@ -71,7 +79,7 @@ export default function Navbari() {
                                           <div className="h-16 hover:bg-stone-800 hover:rounded-md">
                                             <div>
                                                 <div className="w-64 content-center justify-between flex items-center border-gray-300">
-                                                <a href="/catalogue">
+                                                <a href="/catalogue/featured">
                                                   <div className="p-2">
                                                     <div className="">Featured stock</div>
                                                     <div className="text-sm text-red-600 pr-2">
