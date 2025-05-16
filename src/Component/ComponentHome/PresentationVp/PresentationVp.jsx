@@ -73,14 +73,15 @@ const PresentationVp = () => {
 
   return (
     <div>
-      <h2 className='font-titlef text-gray-200 text-2xl md:text-4xl text-left p-6'>
+      <h2 className='font-bold text-gray-800 dark:text-gray-200 text-xl md:text-3xl text-left pl-6 py-3'>
           Available cars
       </h2>
       <div className='p-2'>
       <MenuMarque onSelectMarque={filterMarque}/>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 xl:gap-6 p-2 gap-2 xl:p-4 pt-2">
-      {
+    <div className='px-10 py-4'>
+        <div className="grid gap-2 md:gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+                {
       voitures.length > 0 ? 
         voitures.map((car, index) => (
 
@@ -107,6 +108,7 @@ const PresentationVp = () => {
         </button>
       }
      
+    </div>
     </div>
 
   )

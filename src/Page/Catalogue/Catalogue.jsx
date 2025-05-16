@@ -65,34 +65,36 @@ const Catalogue = () => {
 
 
   return (
-    <div className='bg-black h-full'>
+    <div className='h-full'>
         <div className='hidden lg:block lg:w-full lg:pl-16 lg:pt-8'>
-            <Breadcrumbs key='danger' color='danger' size='lg'>
+            <Breadcrumbs key='primary' color='primary' size='lg'>
                 <BreadcrumbItem href='/'>Accueil</BreadcrumbItem>
                 <BreadcrumbItem>Catalogue</BreadcrumbItem>
             </Breadcrumbs>
         </div>
 
-        <div className='p-4 md:p-16'>
+        {/* <div className='p-4 md:p-16'>
             <h2 className='font-titlef text-red-700 text-4xl md:text-8xl text-left'>
                 Nos véhicules
             </h2>
             <div className='text-gray-400 text-lg md:text-xl p-2 text-left'>
                 Découvrez toutes notre gamme de véhicule disponibles
             </div>
-        </div>
+        </div> */}
 
         { id !== 'featured' &&
                 <div className='p-2'>
                     <MenuMarque onSelectMarque={filterMarque}/>
                     <div className='flex flex-row md:flex-row gap-4 p-2'>
-                        <button onClick={() => redirect('/catalogue/available')} className={"h-12 w-60 border-rose-800 hover:bg-rose-500 border-1 rounded-md" + (id === 'available' ? ' bg-rose-800' :'')}>En stock</button>
-                        <button onClick={() => redirect('/catalogue/sell')} className={"h-12 w-60 border-rose-800 hover:bg-rose-500 border-1 rounded-md" + (id === 'sell' ? ' bg-rose-800' :'')}>Vendu</button> 
+                        <button onClick={() => redirect('/catalogue/available')} className={"h-12 w-60 border-blue-700 hover:bg-blue-600 border-1 rounded-md" + (id === 'available' ? ' bg-blue-700' :'')}>En stock</button>
+                        <button onClick={() => redirect('/catalogue/sell')} className={"h-12 w-60 border-blue-700 hover:bg-blue-600 border-1 rounded-md" + (id === 'sell' ? ' bg-blue-700' :'')}>Vendu</button> 
                     </div>
                 </div>
         }
+{/* grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 */}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 xl:gap-6 p-2 gap-2 xl:p-4 pt-0">
+    <div className='px-10 py-4'>
+        <div className="grid gap-2 md:gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
         {
                 voitures.length > 0 ?
                  voitures.map(v  =>
@@ -104,6 +106,7 @@ const Catalogue = () => {
             
         </div>
     </div>
+</div>
 
   )
 }

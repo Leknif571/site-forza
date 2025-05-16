@@ -1,20 +1,17 @@
 import Iconforza from '../../assets/images/ForzaLogoR.png';
-import IconInsta from '../../assets/images/social_logo/instag.png';
-import IconSnap from '../../assets/images/social_logo/Snapchat.png';
-import IconTikTok from '../../assets/images/social_logo/tiktok.webp';
-import IconYtb from '../../assets/images/social_logo/Youtube_logo.png';
+import Social from '../ComponentHome/SocialMedia/Social';
 import './footer.css'
 
 
 const Footer = () => {
 
   return (
-        <footer className="bg-[#EFEFEF] dark:bg-[#0F161E] shadow-md text-white p-2 md:p-8" id='footer'>
+        <footer className="bg-[#0F161E] shadow-md text-white p-2 md:p-8" id='footer'>
             <div className="mx-auto w-full p-1 md:p-4 py-6 lg:py-8">
               <div className="grid grid-cols-1 gap-8 sm:gap-6 sm:grid-cols-3 md:grid-cols-5 text-center sm:text-left lg:text-left max-w-screen-2xl 2xl:mx-auto">
                   <div class="m-4 sm:col-span-3 md:col-span-2 flex flex-col justify-center lg:text-left mt-12 lg:mt-0">
                     <a class="flex items-center" href="/">
-                      <img alt="f1rza" fetchpriority="low" loading="lazy" decoding="async" data-nimg="1" class="md:w-[240px] w-48 hidden dark:block" src={Iconforza} style={{color: "transparent;", width:"150px", height:"auto"}}/>
+                      <img alt="f1rza" className="md:w-[240px] w-48 block" src={Iconforza} style={{color: "transparent;", width:"150px", height:"auto"}}/>
                     </a>
                   <p class="my-2 text-neutral-400 text-left">Notre plateforme est conçue pour les passionnés d'automobile haut de gamme, ceux qui recherchent l'excellence et l'élégance dans chaque détail. Découvrez une sélection de véhicules de prestige soigneusement choisie afin de vous satisfaire.</p>
                   <span className='p-2 font-bold'>Newsletter</span>
@@ -28,12 +25,12 @@ const Footer = () => {
                   <h2 class="font-mono mb-6 font-bold uppercase text-md">Plan</h2>
                   <ul class="text-sm list-none">
                     <li class="mb-4">
-                      <a class="flex flex-row justify-center sm:justify-start gap-2 text-neutral-400 hover:underline hover:text-[#dc0000] text-sm" href="/contact">
+                      <a class="flex flex-row justify-center sm:justify-start gap-2 text-neutral-400 hover:underline hover:text-[#dc0000] text-sm" href="/catalogue/featured">
                         Nos véhicules
                       </a>
                     </li>
                     <li class="mb-4">
-                      <a class="flex flex-row justify-center sm:justify-start gap-2 text-neutral-400 hover:underline hover:text-[#dc0000] text-sm" href="">
+                      <a class="flex flex-row justify-center sm:justify-start gap-2 text-neutral-400 hover:underline hover:text-[#dc0000] text-sm" href="/sell-your-car">
                         Vends ta voiture
                       </a>
                     </li>
@@ -48,27 +45,27 @@ const Footer = () => {
                   <h2 class="font-mono mb-6 font-bold uppercase text-md">A propos</h2>
                   <ul class="text-sm list-none">
                     <li class="mb-4">
-                      <a class="flex flex-row justify-center sm:justify-start gap-2 text-neutral-400 hover:underline hover:text-[#dc0000] text-sm" href="/contact">
+                      <a class="flex flex-row justify-center sm:justify-start gap-2 text-neutral-400 hover:underline hover:text-[#dc0000] text-sm" href="/about">
                         A Propos de nous
                       </a>
                     </li>
                     <li class="mb-4">
-                      <a class="flex flex-row justify-center sm:justify-start gap-2 text-neutral-400 hover:underline hover:text-[#dc0000] text-sm" href="">
+                      <a class="flex flex-row justify-center sm:justify-start gap-2 text-neutral-400 hover:underline hover:text-[#dc0000] text-sm" href="/condition-generale">
                         Condition générale
                       </a>
                     </li>
                     <li class="mb-4">
-                      <a class="flex flex-row justify-center sm:justify-start gap-2 text-neutral-400 hover:underline hover:text-[#dc0000] text-sm">
+                      <a href='/mentions-legales' class="flex flex-row justify-center sm:justify-start gap-2 text-neutral-400 hover:underline hover:text-[#dc0000] text-sm">
                         Mentions légales
                       </a>
                     </li>
                     <li class="mb-4">
-                      <a class="flex flex-row justify-center sm:justify-start gap-2 text-neutral-400 hover:underline hover:text-[#dc0000] text-sm">
+                      <a href='politique-confidentialite' class="flex flex-row justify-center sm:justify-start gap-2 text-neutral-400 hover:underline hover:text-[#dc0000] text-sm">
                         Politique de confidentialité
                       </a>
                     </li>
                     <li class="mb-4">
-                      <a class="flex flex-row justify-center sm:justify-start gap-2 text-neutral-400 hover:underline hover:text-[#dc0000] text-sm">
+                      <a href='credit' class="flex flex-row justify-center sm:justify-start gap-2 text-neutral-400 hover:underline hover:text-[#dc0000] text-sm">
                         Crédit
                       </a>
                     </li>
@@ -123,28 +120,7 @@ const Footer = () => {
                     . All Rights Reserved</span>
                     </p>
                     <p class="mt-1 text-sm text-center items-center">
-                    <div class="mt-1 z-10 flex rounded text-sm justify-center items-center">
-                      <span class="relative sm:mr-4 flex flex-col justify-center">
-                        <a href="https://www.tiktok.com/@f1rza.official" target="_blank" class="inline-block rounded-full px-1 py-1 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg ">
-                          <img alt="tiktok" fetchpriority="low" loading="lazy" decoding="async" data-nimg="1" src={IconTikTok} className='radius-social-logo'/>
-                        </a>
-                      </span>
-                      <span class="relative sm:mr-4 flex flex-col justify-center">
-                        <a href="https://www.instagram.com/f1rza.official/" target="_blank" class="inline-block rounded-full px-1 py-1 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg ">
-                          <img alt="insta" fetchpriority="low" loading="lazy" decoding="async" data-nimg="1" src={IconInsta} className='radius-social-logo'/>
-                        </a>
-                      </span>
-                      <span class="relative sm:mr-4 flex flex-col justify-center">
-                        <a href="https://www.snapchat.com/add/f1rza.off?locale=fr-FR" target="_blank" class="inline-block rounded-full px-1 py-1 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg ">
-                          <img alt="snap" fetchpriority="low" loading="lazy" decoding="async" data-nimg="1" src={IconSnap} className='radius-social-logo'/>
-                        </a>
-                      </span>
-                      {/* <span class="relative sm:mr-4 flex flex-col justify-center">
-                        <a href="https://www.snapchat.com/add/f1rza.off?locale=fr-FR" target="_blank" class="inline-block rounded-full px-1 py-1 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg ">
-                          <img alt="snap" fetchpriority="low" loading="lazy" decoding="async" data-nimg="1" src={IconYtb} className='radius-social-logo'/>
-                        </a>
-                      </span> */}
-                  </div>
+                      <Social/>
                     </p>
               </div>
             </div>

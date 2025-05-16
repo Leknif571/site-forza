@@ -1,0 +1,63 @@
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.custom-select {
+    min-width: 400px;
+    position: relative;
+  }
+
+  @media only screen and (max-width: 1234px) {
+    .custom-select {
+      min-width: 250px;
+      position: relative;
+    }
+  }
+
+  @media only screen and (max-width: 770) {
+    .custom-select {
+      min-width: 300px;
+      position: relative;
+    }
+  }
+  
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 100%;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.65em 5.5em 0.66em 0.9em;
+    background-color: #151515;
+    border: 1px solid white;
+    border-radius: 0.20rem;
+    color: rgb(219, 219, 219);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+  }
+  
+  .custom-select::before,
+  .custom-select::after {
+    --size: 0.3rem;
+    content: "";
+    position: absolute;
+    right: 1rem;
+    pointer-events: none;
+  }
+  
+  .custom-select::before {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: var(--size) solid black;
+    top: 40%;
+  }
+  
+  .custom-select::after {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-top: var(--size) solid black;
+    top: 55%;
+  }
+  
