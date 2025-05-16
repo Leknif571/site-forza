@@ -67,7 +67,7 @@ const Catalogue = () => {
   return (
     <div className='h-full'>
         <div className='hidden lg:block lg:w-full lg:pl-16 lg:pt-8'>
-            <Breadcrumbs key='primary' color='primary' size='lg'>
+            <Breadcrumbs key='danger' color='danger' size='lg'>
                 <BreadcrumbItem href='/'>Accueil</BreadcrumbItem>
                 <BreadcrumbItem>Catalogue</BreadcrumbItem>
             </Breadcrumbs>
@@ -86,8 +86,8 @@ const Catalogue = () => {
                 <div className='p-2'>
                     <MenuMarque onSelectMarque={filterMarque}/>
                     <div className='flex flex-row md:flex-row gap-4 p-2'>
-                        <button onClick={() => redirect('/catalogue/available')} className={"h-12 w-60 border-blue-700 hover:bg-blue-600 border-1 rounded-md" + (id === 'available' ? ' bg-blue-700' :'')}>En stock</button>
-                        <button onClick={() => redirect('/catalogue/sell')} className={"h-12 w-60 border-blue-700 hover:bg-blue-600 border-1 rounded-md" + (id === 'sell' ? ' bg-blue-700' :'')}>Vendu</button> 
+                        <button onClick={() => redirect('/catalogue/available')} className={"h-12 w-60 border-red-500 hover:bg-red-400 dark:text-white border-1 rounded-md" + (id === 'available' ? ' bg-red-500 text-white' :' text-red-500')}>En stock</button>
+                        <button onClick={() => redirect('/catalogue/sell')} className={"h-12 w-60 border-red-500 hover:bg-red-400 dark:text-white border-1 rounded-md" + (id === 'sell' ? ' bg-red-500 text-white' :' text-red-500')}>Vendu</button> 
                     </div>
                 </div>
         }

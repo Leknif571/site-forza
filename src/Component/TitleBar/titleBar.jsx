@@ -41,24 +41,33 @@ const TitleBar = ({darkMode}) => {
         </div>
 
         <div className={"h-screen" + (isOpen ? " block" : " hidden")}>
-          <div className="space-y-1 px-2 pt-4 pb-3">
-            <div className='border-b-1 border-stone-400'>
-              <a href="/" className="block  rounded-md px-3 py-2 text-base font-medium dark:text-gray-300 hover:dark:text-white text-gray-950 hover:text-red-600" aria-current="page">HOME</a>
-            </div>
-            <div className='border-b-1 border-stone-400'>
-              <a href="/catalogue/available" className="block rounded-md px-3 py-2 text-base font-medium dark:text-gray-300 hover:dark:text-white text-gray-950 hover:text-red-600">AVAILABLE CARS</a>
-            </div>
-            <div className='border-b-1 border-stone-400'>
-              <a href="/catalogue/sell" className="block rounded-md px-3 py-2 text-base font-medium dark:text-gray-300 hover:dark:text-white text-gray-950 hover:text-red-600">SELL CARS</a>
-            </div>
-            <div className='border-b-1 border-stone-400'>
-              <a href="/catalogue/featured" className="block rounded-md px-3 py-2 text-base font-medium dark:text-gray-300 hover:dark:text-white text-gray-950 hover:text-red-600">FEATURED STOCK</a>
-            </div>
-            <div className='border-b-1 border-stone-400'>
-              <a href="/sell" className="block rounded-md px-3 py-2 text-base font-medium dark:text-gray-300 hover:dark:text-white text-gray-950 hover:text-red-600">SELL YOUR CAR</a>
-            </div>
-            <div className='border-b-1 border-stone-400'>
-              <a href="/about" className="block rounded-md px-3 py-2 text-base font-medium dark:text-gray-300 hover:dark:text-white text-gray-950 hover:text-red-600">ABOUT</a>
+          <div className='justify-around'>
+            <div className='flex flex-col'>
+              <div className="space-y-1 px-2 pt-4 pb-3">
+                <div className='border-b-1 border-stone-400'>
+                  <a href="/" className="block  rounded-md px-3 py-2 text-base font-medium dark:text-gray-300 hover:dark:text-white text-gray-950 hover:text-red-600" aria-current="page">HOME</a>
+                </div>
+                <div className='border-b-1 border-stone-400'>
+                  <a href="/catalogue/available" className="block rounded-md px-3 py-2 text-base font-medium dark:text-gray-300 hover:dark:text-white text-gray-950 hover:text-red-600">AVAILABLE CARS</a>
+                </div>
+                <div className='border-b-1 border-stone-400'>
+                  <a href="/catalogue/sell" className="block rounded-md px-3 py-2 text-base font-medium dark:text-gray-300 hover:dark:text-white text-gray-950 hover:text-red-600">SELL CARS</a>
+                </div>
+                <div className='border-b-1 border-stone-400'>
+                  <a href="/catalogue/featured" className="block rounded-md px-3 py-2 text-base font-medium dark:text-gray-300 hover:dark:text-white text-gray-950 hover:text-red-600">FEATURED STOCK</a>
+                </div>
+                <div className='border-b-1 border-stone-400'>
+                  <a href="/sell" className="block rounded-md px-3 py-2 text-base font-medium dark:text-gray-300 hover:dark:text-white text-gray-950 hover:text-red-600">SELL YOUR CAR</a>
+                </div>
+                <div className='border-b-1 border-stone-400'>
+                  <a href="/about" className="block rounded-md px-3 py-2 text-base font-medium dark:text-gray-300 hover:dark:text-white text-gray-950 hover:text-red-600">ABOUT</a>
+                </div>
+              </div>
+              <div>
+                {/* <button className='bg-black text-white'>
+                  Absolute
+                </button> */}
+              </div>
             </div>
           </div>
         </div>

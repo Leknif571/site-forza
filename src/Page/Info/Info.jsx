@@ -14,7 +14,7 @@ const Info = () => {
   return (
     <div className='h-full'>
         <div className='hidden lg:block lg:w-full lg:pl-16 lg:pt-8'>
-            <Breadcrumbs key='primary' color='primary' size='lg'>
+            <Breadcrumbs key='danger' color='danger' size='lg'>
                 <BreadcrumbItem href='/'>Accueil</BreadcrumbItem>
                 <BreadcrumbItem>Mentions-Légales</BreadcrumbItem>
             </Breadcrumbs>

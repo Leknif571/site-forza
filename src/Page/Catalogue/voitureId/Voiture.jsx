@@ -60,7 +60,7 @@ const Voiture = () => {
     <div>
       <div className='h-max'>
       <div className='hidden lg:block lg:w-full lg:pl-16 lg:pt-8'>
-            <Breadcrumbs key='primary' color='primary' size='lg'>
+            <Breadcrumbs key='danger' color='danger' size='lg'>
                 <BreadcrumbItem href='/'>Accueil</BreadcrumbItem>
                 <BreadcrumbItem href='/catalogue'>Catalogue</BreadcrumbItem>
                 <BreadcrumbItem>Detail</BreadcrumbItem>
@@ -68,27 +68,16 @@ const Voiture = () => {
         </div>
         {voitureD?.title && (
           <div className='flex flex-col p-4 lg:flex-row justify-between'>
-            <h1 key={voitureD.title} className='flex justify-center text-3xl font-titlef text-left lg:pt-8 lg:text-4xl lg:pl-4'>{voitureD.title}</h1>
-            <div className='flex p-2 justify-center lg:pt-8 lg:pr-40'>
-                  <Chip variant='shadow' radius='sm' 
-                    color={
-                      voitureD.dispo === "Disponible" ? "success" :
-                      voitureD.dispo === "Disponible sur commande" ? "warning" :
-                      "danger"
-                    }
-                    size='lg'
-                    className='text-right'
-                  >{voitureD.dispo}</Chip>
-            </div>
+            <h1 key={voitureD.title} className='flex justify-center text-3xl font-titlef text-left lg:pt-8 lg:text-4xl lg:pl-4 dark:text-gray-100 text-gray-950'>{voitureD.title}</h1>
+            
   
           </div>
           )}
       </div>
 
-      <hr className="m-1 border-blue-700 lg:ml-16 lg:mr-16"/>
       
       <div className='w-full flex flex-col lg:flex-row justify-center'>
-        <div className='lg:w-2/3 text-xl font-titlef'>
+        <div className='lg:w-3/4 text-xl font-titlef'>
         <div className='p-2'>
         {voitureD?.title && (
           <Swiper
@@ -107,7 +96,7 @@ const Voiture = () => {
             >
               {voitureD.img.map((img, index) => {
                 return (
-                  <SwiperSlide className='h-fit'>
+                  <SwiperSlide className='h-96'>
                     <img src={voitureD.img[index].original} className='object-cover h-[32rem]' alt="" style={{ width:'100%'}} />
                   </SwiperSlide>
                   )
@@ -116,84 +105,84 @@ const Voiture = () => {
             </Swiper>
           )}
           </div>
-          <div className='m-2 min-h-96 bg-stone-200 dark:bg-stone-900 rounded-lg border-1 border-blue-700 p-4'>
-            <h2 className='text-3xl lg:text-4xl text-left pb-3 lg:pb-3 font-titlef text-gray-950'>
+          <div className='m-2 min-h-96 bg-stone-200 dark:bg-gray-950 rounded-lg border-1 border-red-700 p-4'>
+            <h2 className='text-3xl lg:text-4xl text-left pb-3 lg:pb-3 font-titlef dark:text-gray-100 text-gray-950'>
               Description
             </h2>
-            <p className='text-gray-900'>
+            <p className='dark:text-gray-200 text-gray-900'>
               {voitureD.description}
             </p>
           </div>
         </div>
 
-        <div className='bloc-info lg:w-1/3 flex justify-center'>
+        <div className='px-2 h-fit lg:w-1/4 flex justify-center'>
         
-          <div className="bloc-info-txt w-full px-10 pt-5 lg:pt-5"> 
-           {voitureD.price ? ( <h2 className='text-white dark:text-bg-950 text-4xl lg:text-5xl text-center lg:text-left pb-3 lg:pb-3 rajdhani-regular'>
+          <div className="bg-stone-200 dark:bg-gray-950 w-full px-10 pt-5 lg:pt-5 rounded-md"> 
+           {voitureD.price ? ( <h2 className='dark:text-white text-bg-950 text-4xl lg:text-5xl text-center lg:text-left pb-3 lg:pb-3 rajdhani-regular'>
               {voitureD.price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })} 
             </h2> ): ''}
 
             <table className='justify-center w-full text-left'>
-              <tbody className='text-gray-200 text-lg lg:text-xl '>
-                <tr className='border-b-1 border-blue-700'>
-                  <td className='p-2'>Etat</td>
-                  <td className='p-2'>{voitureD.etat}</td>
+              <tbody className='dark:text-gray-200 text-gray-900 text-lg lg:text-2lg '>
+                <tr className='border-b-1 border-red-700'>
+                  <td className='p-1'>Etat</td>
+                  <td className='p-1'>{voitureD.etat}</td>
                 </tr>
-                <tr className='border-b-1 border-blue-700'>
-                  <td className='p-2'>Kilométrage</td>
-                  <td className='p-2'>{voitureD.kilometers} km</td>
+                <tr className='border-b-1 border-red-700'>
+                  <td className='p-1'>Kilométrage</td>
+                  <td className='p-1'>{voitureD.kilometers} km</td>
                 </tr>
-                <tr className='border-b-1 border-blue-700'>
-                  <td className='p-2'>Puissance</td>
-                  <td className='p-2'>{voitureD.chevaux} ch</td>
+                <tr className='border-b-1 border-red-700'>
+                  <td className='p-1'>Puissance</td>
+                  <td className='p-1'>{voitureD.chevaux} ch</td>
                 </tr>
-                <tr className='border-b-1 border-blue-700'>
-                  <td className='p-2'>Puissance fiscale</td>
-                  <td className='p-2'>{voitureD.puissance} NW</td>
+                <tr className='border-b-1 border-red-700'>
+                  <td className='p-1'>Puissance fiscale</td>
+                  <td className='p-1'>{voitureD.puissance} NW</td>
                 </tr>
-                <tr className='border-b-1 border-blue-700'>
-                  <td className='p-2'>Energie</td>
-                  <td className='p-2'>{voitureD.energie}</td>
+                <tr className='border-b-1 border-red-700'>
+                  <td className='p-1'>Energie</td>
+                  <td className='p-1'>{voitureD.energie}</td>
                 </tr>
-                <tr className='border-b-1 border-blue-700'>
-                  <td className='p-2'>Transmission</td>
-                  <td className='p-2'>{voitureD.automatique === "on" ? 'Automatique' : "Manuel"}</td>
+                <tr className='border-b-1 border-red-700'>
+                  <td className='p-1'>Transmission</td>
+                  <td className='p-1'>{voitureD.automatique === "on" ? 'Automatique' : "Manuel"}</td>
                 </tr>
-                <tr className='border-b-1 border-blue-700'>
-                  <td className='p-2'>Mise en circulation</td>
-                  <td className='p-2'>{voitureD.date}</td>
+                <tr className='border-b-1 border-red-700'>
+                  <td className='p-1'>Mise en circulation</td>
+                  <td className='p-1'>{voitureD.date}</td>
                 </tr>
-                <tr className='border-b-1 border-blue-700'>
-                  <td className='p-2'>Marque</td>
-                  <td className='p-2'>{voitureD.marque}</td>
+                <tr className='border-b-1 border-red-700'>
+                  <td className='p-1'>Marque</td>
+                  <td className='p-1'>{voitureD.marque}</td>
                 </tr>
-                <tr className='border-b-1 border-blue-700'>
-                  <td className='p-2'>Modèle</td>
-                  <td className='p-2'>{voitureD.model}</td>
+                <tr className='border-b-1 border-red-700'>
+                  <td className='p-1'>Modèle</td>
+                  <td className='p-1'>{voitureD.model}</td>
                 </tr>
-                <tr className='border-b-1 border-blue-700'>
-                  <td className='p-2'>Nombre de portes</td>
-                  <td className='p-2'>{voitureD.nbPorte} portes</td>
+                <tr className='border-b-1 border-red-700'>
+                  <td className='p-1'>Nombre de portes</td>
+                  <td className='p-1'>{voitureD.nbPorte} portes</td>
                 </tr>
-                <tr className='border-b-1 border-blue-700'>
-                  <td className='p-2'>Nombre de places</td>
-                  <td className='p-2'>{voitureD.nbPlace} places</td>
+                <tr className='border-b-1 border-red-700'>
+                  <td className='p-1'>Nombre de places</td>
+                  <td className='p-1'>{voitureD.nbPlace} places</td>
                 </tr>
-                <tr className='border-b-1 border-blue-700'>
-                  <td className='p-2'>Couleur extérieur</td>
-                  <td className='p-2'>{voitureD.couleurExt}</td>
+                <tr className='border-b-1 border-red-700'>
+                  <td className='p-1'>Couleur extérieur</td>
+                  <td className='p-1'>{voitureD.couleurExt}</td>
                 </tr>
-                <tr className='border-b-1 border-blue-700'>
-                  <td className='p-2'>Couleur intérieur</td>
-                  <td className='p-2'>{voitureD.couleurInt}</td>
+                <tr className='border-b-1 border-red-700'>
+                  <td className='p-1'>Couleur intérieur</td>
+                  <td className='p-1'>{voitureD.couleurInt}</td>
                 </tr>
-                <tr className='border-b-1 border-blue-700'>
-                  <td className='p-2'>Matière</td>
-                  <td className='p-2'>{voitureD.matSiege}</td>
+                <tr className='border-b-1 border-red-700'>
+                  <td className='p-1'>Matière</td>
+                  <td className='p-1'>{voitureD.matSiege}</td>
                 </tr>
-                <tr className='border-b-1 border-blue-700'>
-                  <td className='p-2'>Référence</td>
-                  <td className='p-2'>{voitureD.reference}</td>
+                <tr className='mb-4'>
+                  <td className='p-1'>Référence</td>
+                  <td className='p-1'>{voitureD.reference}</td>
                 </tr>
 
        

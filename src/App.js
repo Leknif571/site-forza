@@ -16,8 +16,9 @@ function App() {
   const savedDarkMode = localStorage.getItem('darkMode') === 'true';
   // Set the initial state based on local storage
   const [darkMode, setDarkMode] = useState(savedDarkMode);
-  // If dark mode is not saved, default to true
+  // If dark mode is not saved, set it to true by default
   if (savedDarkMode === null) {
+    localStorage.setItem('darkMode', true);
     setDarkMode(true);
   }
   const toggleDarkMode = () => {

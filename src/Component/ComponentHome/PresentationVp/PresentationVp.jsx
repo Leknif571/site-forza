@@ -74,7 +74,7 @@ const PresentationVp = () => {
   return (
     <div>
       <h2 className='font-bold text-gray-800 dark:text-gray-200 text-xl md:text-3xl text-left pl-6 py-3'>
-          Available cars
+          AVAILABLE CARS
       </h2>
       <div className='p-2'>
       <MenuMarque onSelectMarque={filterMarque}/>
