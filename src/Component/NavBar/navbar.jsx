@@ -1,5 +1,6 @@
 import {Link} from "@heroui/react";
 import { IoIosSunny } from "react-icons/io";
+import { IoMoon } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 import { GiSandsOfTime } from "react-icons/gi";
 import { IoCarSport } from "react-icons/io5";
@@ -135,7 +136,14 @@ export default function Navbari({darkMode, setDarkMode}) {
     <div className="flex flex-row">
       <div className="py-5 hidden md:flex md:mx-4 2xl:mx-auto cursor-pointer">
           <a onClick={() => setDarkMode()}>
-            <IoIosSunny color={darkMode ? "white" : "black" } size={20}/>
+            {darkMode ? <IoIosSunny color="white" size={20}/> 
+            
+            :
+                        <IoMoon color="black" size={20}/>
+
+            }
+            
+            
           </a>
       </div>
       <div className="py-5 hidden md:flex md:ml-4 px-6 2xl:mx-auto">
