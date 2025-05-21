@@ -10,6 +10,7 @@ import TitleBar from './Component/TitleBar/titleBar';
 import Info from './Page/Info/Info';
 import Sell from './Page/SellYouCar/Sell';
 import About from './Page/About/About';
+import LikingPage from './Page/LikingPage/LikingPage';
 
 function App() {
   // Check if dark mode is saved in local storage
@@ -29,7 +30,7 @@ function App() {
   return (
     <div className={darkMode ? 'dark' : ''}>
       <div className="bg-white dark:bg-zinc-800">
-        <TitleBar darkMode={darkMode} />
+        <TitleBar darkMode={darkMode} setDarkMode={toggleDarkMode}/>
         <Navbari darkMode={darkMode} setDarkMode={toggleDarkMode} />
 
         <Routes>
@@ -40,6 +41,7 @@ function App() {
             <Route path='/mentions-legales' element={<Info/>}/>  
             <Route path='/sell-your-car' element={<Sell/>}/>
             <Route path='/about' element={<About/>}/>
+            <Route path='/liking-page' element={<LikingPage/>}/>
         </Routes>
         <Footer/>
       </div>

@@ -13,6 +13,8 @@ const PresentationVp = () => {
     let [voitures, setVoitures] = useState([])
     let [voitures2, setVoitures2] = useState([])
 
+    let [selectMarque, setSelectMarque] = useState('all')
+
     let [copyVoitures, setCopyVoitures] = useState([])
     let [copyVoitures2, setCopyVoitures2] = useState([])
     
@@ -51,21 +53,23 @@ const PresentationVp = () => {
     }, [])
 
     
-    const filterMarque = (valueSelectMarque) =>
+    const filterMarque = (v) =>
       {
 
           setVoitures(copyVoitures)
           setVoitures2(copyVoitures2)
-          if(valueSelectMarque !== 'all'){
-              let newArrayVoitureMa = voitures.filter((voiture) => voiture.marque === valueSelectMarque)
-              let newArrayVoitureMa2 = voitures2.filter((voiture) => voiture.marque === valueSelectMarque)
+          if(v !== 'all'){
+              let newArrayVoitureMa = voitures.filter((voiture) => voiture.marque === v)
+              let newArrayVoitureMa2 = voitures2.filter((voiture) => voiture.marque === v)
 
               setVoitures(newArrayVoitureMa)
               setVoitures2(newArrayVoitureMa2)
+              setSelectMarque(v)
 
           }else{
               setVoitures(copyVoitures)
               setVoitures2(copyVoitures2)
+              setSelectMarque("all")
           }
       }
 
@@ -77,7 +81,7 @@ const PresentationVp = () => {
           AVAILABLE CARS
       </h2>
       <div className='p-2'>
-      <MenuMarque onSelectMarque={filterMarque}/>
+      <MenuMarque onSelectMarque={filterMarque} valueSelectMarque={selectMarque}/>
       </div>
     <div className='px-10 py-4'>
         <div className="grid gap-2 md:gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">

@@ -147,7 +147,7 @@ export default function Navbari({darkMode, setDarkMode}) {
           </a>
       </div>
       <div className="py-5 hidden md:flex md:ml-4 px-6 2xl:mx-auto">
-        <a href="">
+        <a href="/liking-page">
             <FaRegHeart  color={darkMode ? "white" : "black" } size={20} />
         </a>
       </div>

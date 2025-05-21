@@ -3,26 +3,36 @@ import './catalogue.css'
 import CardVoiture from '../../Component/ComponentMultiUse/Card'
 import { useState, useEffect } from 'react'
 import { collection } from 'firebase/firestore'
-import { getDocs } from 'firebase/firestore'
+import { getDocs, query, orderBy, limit, where } from 'firebase/firestore'
 import { Breadcrumbs,BreadcrumbItem} from "@heroui/react"
 import MenuMarque from '../../Component/MenuMarque/MenuMarque'
 import { useParams } from 'react-router-dom'
+import { Pagination } from "flowbite-react";
 
 import {db} from '../../Service/firebase.config'
 
-
-
 const Catalogue = () => {
     const { id } = useParams();
+    let [selectMarque, setSelectMarque] = useState("all")
+    
 
     let [voitures, setVoitures] = useState([])
     let [copyVoitures, setCopyVoitures] = useState([])
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const onPageChange = (page) => setCurrentPage(page);
+
+    const [length, setLength] = useState(0)
+
     const collectionRef = collection(db, "Voitures" )
 
+    const query1 = query(collectionRef, where("dispo", "==", id))
+
+
     useEffect(() => {
+        
             const getVoitures = async () => {
-                await getDocs(collectionRef).then((voiture) => {
+                await getDocs(query1).then((voiture) => {
                     let voituresData = voiture.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
                     setVoitures(voituresData);
                     setCopyVoitures(voituresData)
@@ -30,35 +40,29 @@ const Catalogue = () => {
             }
 
             getVoitures();
+            console.log(voitures);
     }, [])
 
 
-    const filterMarque = (valueSelectMarque) =>
+    const filterMarque = (v) =>
     {
         setVoitures(copyVoitures)
-        if(valueSelectMarque !== 'all'){
-            let newArrayVoitureMa = copyVoitures.filter((voiture) => voiture.marque === valueSelectMarque)
+        if(v !== 'all'){
+            let newArrayVoitureMa = copyVoitures.filter((voiture) => voiture.marque === v)
             setVoitures(newArrayVoitureMa)
+            setSelectMarque(v)
         }else{
             setVoitures(copyVoitures)
+            setSelectMarque("all")
         }
     }
 
-    const filterStock = (valueSelectStock) =>
-        {
-            setVoitures(copyVoitures)
-            if(valueSelectStock !=='all'){
-                let newArrayVoitureMa = copyVoitures.filter((voiture) => voiture.marque === valueSelectStock)
-                setVoitures(newArrayVoitureMa)
-            }else{
-                setVoitures(copyVoitures)
-            }
-        }
 
     const redirect = (linkRed) => {
-        if(id === 'available' && linkRed === '/catalogue/sell'){
+        // console.log(id);
+        if(id === "available" && linkRed === '/catalogue/sell'){
             window.location.href = linkRed
-        } else if(id === 'sell' && linkRed === '/catalogue/available'){
+        } else if(id === "sell" && linkRed === '/catalogue/available'){
             window.location.href = linkRed
         } 
     }
@@ -84,7 +88,7 @@ const Catalogue = () => {
 
         { id !== 'featured' &&
                 <div className='p-2'>
-                    <MenuMarque onSelectMarque={filterMarque}/>
+                    <MenuMarque onSelectMarque={filterMarque} valueSelectMarque={selectMarque} />
                     <div className='flex flex-row md:flex-row gap-4 p-2'>
                         <button onClick={() => redirect('/catalogue/available')} className={"h-12 w-60 border-red-500 hover:bg-red-400 dark:text-white border-1 rounded-md" + (id === 'available' ? ' bg-red-500 text-white' :' text-red-500')}>En stock</button>
                         <button onClick={() => redirect('/catalogue/sell')} className={"h-12 w-60 border-red-500 hover:bg-red-400 dark:text-white border-1 rounded-md" + (id === 'sell' ? ' bg-red-500 text-white' :' text-red-500')}>Vendu</button> 
@@ -96,8 +100,8 @@ const Catalogue = () => {
     <div className='px-10 py-4'>
         <div className="grid gap-2 md:gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
         {
-                voitures.length > 0 ?
-                 voitures.map(v  =>
+            voitures.length > 0 ?
+                voitures.map(v  =>
                     <CardVoiture arrayElementCar={v}/>
                 )
                 :
@@ -105,6 +109,10 @@ const Catalogue = () => {
             }
             
         </div>
+        <div>
+            {/* <Pagination className='text-center' currentPage={currentPage} totalPages={length} onPageChange={onPageChange} showIcons /> */}
+        </div>
+
     </div>
 </div>
 
