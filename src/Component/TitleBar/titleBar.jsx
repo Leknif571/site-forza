@@ -55,7 +55,7 @@ const TitleBar = ({darkMode, setDarkMode}) => {
                   <a href="/catalogue/available" className="block rounded-md px-3 py-2 text-base font-medium dark:text-gray-300 hover:dark:text-white text-gray-950 hover:text-red-600">AVAILABLE CARS</a>
                 </div>
                 <div className='border-b-1 border-stone-400'>
-                  <a href="/catalogue/sell" className="block rounded-md px-3 py-2 text-base font-medium dark:text-gray-300 hover:dark:text-white text-gray-950 hover:text-red-600">SELL CARS</a>
+                  <a href="/catalogue/sell" className="block rounded-md px-3 py-2 text-base font-medium dark:text-gray-300 hover:dark:text-white text-gray-950 hover:text-red-600">SOLD CARS</a>
                 </div>
                 <div className='border-b-1 border-stone-400'>
                   <a href="/catalogue/featured" className="block rounded-md px-3 py-2 text-base font-medium dark:text-gray-300 hover:dark:text-white text-gray-950 hover:text-red-600">FEATURED STOCK</a>

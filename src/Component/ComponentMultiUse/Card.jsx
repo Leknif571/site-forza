@@ -61,15 +61,21 @@ const CardVoiture = ({arrayElementCar}) => {
             modules={[Pagination, Navigation]}
           >
 
+                {arrayElementCar.img[0].original &&
                 <SwiperSlide>
                   <img src={arrayElementCar.img[0].original} alt="" className='h-32 sm:h-48 object-cover' style={{width:'100%'}} />
                 </SwiperSlide>
+                }
+                {arrayElementCar.img[1].original &&
                 <SwiperSlide>
                   <img src={arrayElementCar.img[1].original} alt="" className='h-32 sm:h-48 object-cover' style={{width:'100%'}} />
                 </SwiperSlide>
+                }
+                {arrayElementCar.img[2].original &&
                 <SwiperSlide>
                   <img src={arrayElementCar.img[2].original} alt="" className='h-32 sm:h-48 object-cover' style={{width:'100%'}} />
                 </SwiperSlide>
+                }
           
           </Swiper>
         </div>  
